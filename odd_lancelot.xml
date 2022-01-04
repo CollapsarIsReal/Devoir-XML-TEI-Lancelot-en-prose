@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Titre</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Information sur la publication</p>
+      </publicationStmt>
+      <sourceDesc>
+        <msDesc xml:id="ms0255">
+          <!-- identifier le manuscrit -->
+          <msIdentifier>
+            <country>France</country>
+            <settlement>Rennes</settlement>
+            <institution>Bibliothèque Municipale</institution>
+            <repository>Section romane</repository>
+            <collection><!--Collection--></collection>
+            <idno><!-- identifiant (cote) --></idno>
+            <msName><!--Nom du manuscrit--></msName>
+            <altIdentifier>
+              <idno>http://jonas.irht.cnrs.fr/manuscrit/52270</idno>
+            </altIdentifier>
+          </msIdentifier>
+          
+          <!--Fiche du manuscrit-->
+          <head>
+            <title>Romans de la Table ronde </title>
+            <origPlace key="Paris">Paris</origPlace>
+            <origDate notBefore="1220" notAfter="1230">Vers 1220</origDate>
+            <note><!-- informations complémentaires --></note>
+          </head>
+          
+          <!-- Structure du manuscrit -->
+          <msContents>
+            <summary><!--Descriptif global du contenu--></summary>
+            <textLang mainLang="fr" otherLangs="en">
+              <!--Passages en anglais-->
+            </textLang>
+            <msItemStruct>
+              <locus from="xxxx" to="xxxx">
+                <!-- folios concernés par la section -->
+              </locus>
+              <author><!-- auteur --></author>
+              <title><!-- titre de la section --></title>
+              <incipit><!-- premiers mots de la section --></incipit>
+              <explicit><!-- derniers mots de la section --></explicit>
+              <filiation>
+                <!--Relation à d'autres manuscrits, textes ou œuvres diverses-->
+              </filiation>
+              <note><!--Ajouts divers--></note>
+              <textLang mainLang="" otherLangs="">
+                <!-- langue principale du texte concerné -->
+              </textLang>
+            </msItemStruct>
+          </msContents>
+          
+          <!-- Description matérielle du manuscrit -->
+          <physDesc>
+            <objectDesc>
+              <supportDesc>
+                <support>Parchemin</support>
+                <extent>
+                  <width unit="320mm"/>
+                  <height unit="460mm"/>
+                </extent>
+                <foliation>276 feuillets</foliation>
+              </supportDesc>
+              <layoutDesc>
+                <!-- disposition du texte sur le folio -->
+                <layout columns="3" writtenLines="46">On note la présence d'une réglure légère à la mine de plomb. Chaque première ligne des trois colonnes
+                possède des lettres allongées (s,t,c,l)</layout>
+              </layoutDesc>
+            </objectDesc>
+            <handDesc hands="2">
+              <!-- @hands = nombre de mains -->
+              <!-- Déclaration des mains -->
+              <handNote xml:id="id">
+                <p><locus from="f2" to="f4"/><!-- passage concerné -->
+                  <!-- Description des traits distinctifs de la main concernée --></p>
+              </handNote>
+            </handDesc>
+            <scriptDesc>
+              <scriptNote><!-- caractérisation de l'écriture --></scriptNote>
+            </scriptDesc>
+            <decoDesc>
+              <decoNote>
+              La plupart des majuscules du texte sont rubriquées en rouge. Certaines,
+              lorsque présentes sur la première ligne de la page, sont allongées et
+              rehaussées de bleu et rouge ainsi qu’ornées de motifs rappelant des
+              circonvolutions végétales. Les initiales de début de paragraphe
+              présentent des décorations plus prononcées telles que décrites
+              ci-dessous.
+              </decoNote>
+            </decoDesc>
+            <bindingDesc>
+              <p/>
+              <!-- description de la reliure -->
+            </bindingDesc>
+            <sealDesc>
+              <p/>
+              <!-- description du ou des sceaux -->
+            </sealDesc>
+          </physDesc>
+          
+          <!-- Histoire et transmission du manuscrit -->
+          <history>
+            <origin><!-- lieu de production du manuscrit --></origin>
+            <provenance>
+              <p><!-- histoire de la transmission du manuscrit --></p>
+              <!-- indications bibliographiques -->
+              <listBibl>
+                <bibl>
+                  <author/>
+                  <title/>
+                  <pubPlace/>
+                  <publisher/>
+                  <date/>
+                </bibl>
+              </listBibl>
+            </provenance>
+            <acquisition>
+              <!-- Marque de possession -->
+              <stamp>
+                <!-- estampille -->
+                <dim/>
+                <location/>
+                <mentioned/>
+              </stamp>
+            </acquisition>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <schemaSpec ident="oddex1" start="TEI">
+        <moduleRef key="header"/>
+        <moduleRef key="core"/>
+        <moduleRef key="tei"/>
+        <moduleRef key="textstructure"/>
+        <moduleRef key="msdescription"/>
+        <!-- Car je veux décrire des manuscrits-->
+        <moduleRef key="transcr"/>
+        <!--Car je veux aussi les transcrire-->
+        <moduleRef key="textcrit"/>
+        <!-- Car je veux réaliser un apparat critique -->
+        
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>
