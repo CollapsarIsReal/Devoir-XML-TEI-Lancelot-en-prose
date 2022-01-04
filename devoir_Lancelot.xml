@@ -144,17 +144,66 @@
                     
                     
                     <history>
-                        <origin><!-- lieu de production du manuscrit --></origin>
+                        <origin>France</origin>
                         <provenance>
-                            <p><!-- histoire de la transmission du manuscrit --></p>
+                            <p>Le manuscrit a appartenu au chancelier Pierre Séguier.
+                                <!-- histoire de la transmission du manuscrit --></p>
                             <!-- indications bibliographiques -->
                             <listBibl>
-                                <bibl>
-                                    <author/>
-                                    <title/>
+                                <head>
+                                    Bibliographie des ouvrages mentionnant le 
+                                    <bibl corresp="#ms16999">manuscrit 16999</bibl> :
+                                </head>
+                                <bibl xml:id="Aniel-2008">
+                                    <author>Notice par <persName>Jean Pierre ANIEL</persName></author>
+                                    <title>La rubrique et l'image dans le manuscrit médiéval : quelques remarques",
+                                        in Qu'est-ce que nommer? L' image légendée entre monde monastique et pensée scolastique ; 
+                                        actes du colloque du RILMA, Institut Universitaire de France (Paris, INHA, 17 - 18 octobre 2008)</title>
+                                    <pubPlace>Turnhout</pubPlace>
+                                    <publisher>Brepols</publisher>
+                                    <date>2008</date>
+                                </bibl>
+                                <bibl xml:id="Heck-2010">
+                                    <author><persName>Christian HECK</persName></author>
+                                    <title>Qu'est-ce que nommer? L'image légendée entre monde monastique et pensée scolastique</title>
+                                    <pubPlace>Turnhout</pubPlace>
+                                    <publisher>Brepols</publisher>
+                                    <date>2010</date>
+                                </bibl>
+                                <bibl xml:id="Salamon-2010">
+                                    <author><persName>Cécile LE CORNEC-ROCHELOIS</persName>, <persName>Anne ROCHEBOUET</persName>, <persName>Anne SALAMON (dir.)</persName></author>
+                                    <title>Le texte médiéval : de la variante à la recréation</title>
                                     <pubPlace/>
                                     <publisher/>
-                                    <date/>
+                                    <date>2012</date> <!-- ne pas oublier de rajouter les numéros de page et les langues !!-->
+                                </bibl>
+                                <bibl xml:id="Pyun-2010">
+                                    <author><persName>Kyunghee PYUN</persName> et <persName>Anna D. RUSSAKOFF</persName></author>
+                                    <title>Jean Pucelle : innovation and collaboration in manuscript painting</title>
+                                    <pubPlace>Turnhout</pubPlace>
+                                    <publisher>Brepols</publisher>
+                                    <date>2013</date> London ; Turnhout : H. Miller, cop. 2013, cité p. 119 n32, 122 n55, 129. 
+                                </bibl>
+                            </listBibl>
+                            <listBibl>
+                                <head>
+                                    Bibliographie relatif à un dépouillement bibliographique:
+                                </head>
+                                <bibl xml:id="Dumitrescu-2014">
+                                    <author>L.-I. DUMITRESCU</author>
+                                    <title>« Le rôle de l'homologie dans quelques armoiries littéraires »,
+                                        dans Marqueurs d'identité dans la littérature médiévale: mettre en signe l'individu et la famille (XIIe-XVe siècles) :
+                                        actes du colloque tenu à Poitiers les 17 et 18 novembre 2011, textes réunis par <persName>Catalina Girbea</persName>, <persName>Laurent Hablot</persName> et <persName>Raluca Radulescu</persName></title>
+                                    <pubPlace>Turnhout</pubPlace>
+                                    <publisher>Brepols</publisher>
+                                    <date>2014</date> p. 129-133, cité p. 131. — 8-IMPR-12090.
+                                </bibl>
+                                <bibl xml:id="Whetter-2017">
+                                    <author>K.S. WHETTER</author>
+                                    <title>The manuscript and meaning of Malory's’Morte Darthur : rubrication, commemoration, memorialization</title>
+                                    <pubPlace>Cambridge</pubPlace>
+                                    <publisher>DS Brewer</publisher>
+                                    <date>2017</date>   p. 47. — 8-IMPR-12768.
                                 </bibl>
                             </listBibl>
                         </provenance>
