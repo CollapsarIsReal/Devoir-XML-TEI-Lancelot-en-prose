@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_ms.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <!DOCTYPE TEI SYSTEM "DTD_devoir.dtd">
 
@@ -266,6 +267,7 @@
         
         
         <profileDesc>
+              
             <particDesc>
                 <listPerson>
                     <person xml:id="Guenievre">
@@ -539,31 +541,31 @@
                     <head>Lancelot en prose, Chapitres 056/057 : Quête de Gauvain et situation d’Hector</head>
                     <lg type="partie" n="1">
                     <lg type="colonne" n="1">
-                        <l facs="#l1">Lors commence la</l>
-                        <l facs="#l2"><persName ref="#genievre">royne</persName> apenser et</l>
+                    <l facs="#l1">Lors commence la<lb/></l>
+                        <l facs="#l2"><persName ref="#Guenievre">royne</persName> apenser et</l>
                         <l facs="#l3">puis demande au &chevalier;</l>
-                        <l facs="#l4">qui cil estoit qui li ma(n)</l>
+                        <l facs="#l4">qui cil estoit qui li m&an;</l>
                     </lg>
                     <lg type="colonne" n="2">
                         <l facs="#l5">doit et il respont quil</l>
-                        <l facs="#l6">ne scet ou mais il co(m)</l>
+                        <l facs="#l6">ne scet ou mais il c&om;</l>
                         <l facs="#l7">manda que ie le vous</l>
                         <l facs="#l8">deisse et vous le connois</l>
                         <l facs="#l9">troiz bien Et quant la</l>
-                        <l facs="#l10"><persName ref="#Genievre">royne</persName> voit quil est ble</l>
+                        <l facs="#l10"><persName ref="#Guenievre">royne</persName> voit quil est ble</l>
                         <l facs="#l11">ciez si li demanda qui</l>
                         <l facs="#l12">le bleca ainssi Certes</l>
                         <l facs="#l13">dame fait il li &chevalier;s &que;</l>
                         <l facs="#l14">ie vous di ma blecie li</l>
                         <l facs="#l15">chair si durement que</l>
-                        <l facs="#l16">ie me blecea ainsi co(m)</l>
-                        <l facs="#l17">me vous veez Lors p(ar)</l>
+                        <l facs="#l16">ie me blecea ainsi c&om;</l>
+                        <l facs="#l17">me vous veez Lors &par;</l>
                         <l facs="#l18">la la pucele qui les eu</l>
                         <l facs="#l19">avoit aporte &et; dist a</l>
-                        <l facs="#l20">la<persName ref="#genievre">royne</persName> dame fait ele</l>
+                        <l facs="#l20">la<persName ref="#Guenievre">royne</persName> dame fait ele</l>
                         <l facs="#l21">salus vous mande la</l>
                         <l facs="#l22">plus sage pucele qui</l>
-                        <l facs="#l23">orendroit _ et la</l>
+                        <l facs="#l23">orendroit vive et la</l>
                         <l facs="#l24">plus bele que ie sache</l>
                         <l facs="#l25">a mon enscient et si</l>
                         <l facs="#l26">vous mande que vous</l>
@@ -584,9 +586,9 @@
                         <l facs="#l41">tra en la greignour</l>
                         <l facs="#l42">ioie ou vous fussiez li</l>
                         <l facs="#l43">moult diex fait la roy</l>
-                        <l facs="#l44">ne li esccuz fait &bien; _</l>
-                        <l facs="#l45">_ et bonne aventure</l>
-                        <l facs="#l46">eut la pucele qui le me_</l>
+                        <l facs="#l44">ne li esccuz fait &bien; <unclear>agi</unclear></l>
+                        <l facs="#l45"><unclear>der</unclear> et bonne aventure</l>
+                        <l facs="#l46">eut la pucele qui le m&en;</l>
                         <l facs="#l47">_ &et; vous qui la por</l>
                         <l facs="#l48">tastes soiez la bien ve</l>
                         <l facs="#l49">nue pour dieu qui est</l>
@@ -635,7 +637,7 @@
                         <l facs="#l90">cu et par dessouz estoie(nt)</l>
                         <l facs="#l91">si loing aloing que _</l>
                         <l facs="#l92">proient.</l>
-                        <l facs="#l93">Co(mme) la <persName ref="#Genievre">royne</persName> dist ala</l>
+                        <l facs="#l93">Co(mme) la <persName ref="#Guenievre">royne</persName> dist ala</l>
                         <l facs="#l94">pucele Certes da</l>
                         <l facs="#l95">moisele cist escu est &moult;</l>
                         <l facs="#l96">gentis sil ne fust fend&us;</l>
@@ -682,15 +684,15 @@
                         <l facs="#l133">le meilleur dedenz &et; de</l>
                         <l facs="#l134">hors sine mentiroie ie</l>
                         <l facs="#l135">mie tant en ai or reti</l>
-                        <l facs="#l136">re Car par <damage></damage></l>
+                        <l facs="#l136">re Car par <damage degree="high"></damage></l>
                         <l facs="#l137">fait darmes en peude</l>
                         <l facs="#l138">temps plus &que; nuls.</l>
-                        <l facs="#l139"><div ref="#D3">D</div>De ces nouveles</l>
+                        <l facs="#l139">De ces nouveles</l> <!-- ref="#D3" -->
                         <l facs="#l140">fu &moult; liee la roy</l>
                         <l facs="#l141">ne et retint la damoise</l>
                         <l facs="#l142">le a &moult; grant feste &et; bien;</l>
-                        <l facs="#l143">pensa en son _ au li</l>
-                        <l facs="#l144">ch(eva)l(ie)rs proit estre lors &par;</l>
+                        <l facs="#l143">pensa en son <unclear>_</unclear> au li</l>
+                        <l facs="#l144">&chevalier;s proit estre lors &par;</l>
                         <l facs="#l145">la li &chevalier; bleciez et dem&an;</l>
                         <l facs="#l146">da congie a la <persName ref="#Genievre">royne</persName> et</l>
                         <l facs="#l147">dist quil avoit encore</l>
@@ -742,7 +744,7 @@
                         <l facs="#l191">chal Sire li &chevalier;s qui se</l>
                         <l facs="#l192">combati contre &sS;egurades</l>
                         <l facs="#l193">vous salue comme ce </l>
-                        <l facs="#111111"    >lui que il veult tenir a</l>
+                        <l facs="#111111">lui que il veult tenir a</l>
                         <l facs="#l194">seignour &et; ami &et; men</l>
                         <l facs="#l195">voie en &vostre; prison. Car</l>
                         <l facs="#l196">il seet &bien; que vous ne</l>
