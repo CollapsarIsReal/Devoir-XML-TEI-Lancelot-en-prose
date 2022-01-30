@@ -10,19 +10,24 @@
 <!ENTITY bien "<choice><abbr>b&#241;</abbr><expan>bien</expan></choice>" > <!--  bn avec tilde -->
 <!ENTITY chevalier "<choice><abbr>chl&#345;</abbr><expan>chevalier</expan></choice>" >
 <!ENTITY par "<choice><abbr>&#xa751;</abbr><expan>par</expan></choice>" > <!--  p barré droit -->
+<!ENTITY pre "<choice><abbr>&#x1E55;</abbr><expan>pre</expan></choice>" >
 <!ENTITY que "<choice><abbr>&#xA757;</abbr><expan>que</expan></choice>"> <!--  q barré droit -->
 <!ENTITY grant "<choice><abbr>g&#241;t</abbr><expan>grant</expan></choice>" >
 <!ENTITY vostre "<choice><abbr>v&#345;e</abbr><expan>vostre</expan></choice>" >
+<!ENTITY omme "<choice><abbr>c&#333;</abbr><expan>omme</expan></choice>" >
+
 
 <!ENTITY moult "<choice><abbr>mlt</abbr><expan>m<ex>o</ex>lt</expan></choice>">
 
-<!ENTITY uv "<choice><orig>u</orig><reg>v</reg></choice>" >
-<!ENTITY è "<choice><orig>e</orig><reg>è</reg></choice>" >
-<!ENTITY è "<choice><orig>e</orig><reg>è</reg></choice>" >
-<!ENTITY eE "<choice><orig>e</orig><reg>E</reg></choice>" >
-<!ENTITY cC "<choice><orig>c</orig><reg>C</reg></choice>" >
-<!ENTITY hH "<choice><orig>h</orig><reg>H</reg></choice>" >
-<!ENTITY sS "<choice><orig>s</orig><reg>S</reg></choice>" >
+<!ENTITY E "<choice><orig>e</orig><reg>E</reg></choice>" >
+<!ENTITY C "<choice><orig>c</orig><reg>C</reg></choice>" >
+<!ENTITY H "<choice><orig>h</orig><reg>H</reg></choice>" >
+<!ENTITY S "<choice><orig>s</orig><reg>S</reg></choice>" >
+<!ENTITY Q "<choice><orig>q</orig><reg>Q</reg></choice>" >
+<!ENTITY L "<choice><orig>l</orig><reg>L</reg></choice>" >
+<!ENTITY D "<choice><orig>d</orig><reg>D</reg></choice>" >
+<!ENTITY N "<choice><orig>n</orig><reg>N</reg></choice>" >
+
 
 
 
