@@ -594,256 +594,257 @@
                     xml:id="f103v"/>
                 
                 <cb n="1"/>
-                <lb n="1"/><l facs="#l1">Lors commence la</l>
-                <lb n="2"/><l facs="#l2"><persName ref="#Guenievre">royne</persName> apenser et</l>
-                <lb n="3"/><l facs="#l3">puis demande au &chevalier;</l>
-                <lb n="4"/><l facs="#l4">qui cil estoit qui li m&an;</l>
+                <lb n=""/><l facs="#l1">Lors commence la</l>
+                <lb n=""/><l facs="#l2"><persName ref="#Guenievre">royne</persName> apenser et</l>
+                <lb n=""/><l facs="#l3">puis demande au &chevalier;</l>
+                <lb n=""/><l facs="#l4">qui cil estoit qui li m&an;</l>
 
                 <cb n="2"/>
-                <lb xml:id="n5" n="5"/><l facs="#l5">doit et il respont quil</l>
-                <lb n="6" type="rejet" corresp="#n7" /><l facs="#l6">ne scet ou mais il c&om;</l>
-                <lb xml:id="n7" n="7"/><l facs="#l7">manda que ie le vous</l>
-                <lb n="8"/><l facs="#l8">deisse et vous le connois</l>
-                <lb n="9"/><l facs="#l9">troiz bien &E;t quant la</l>
-                <lb n="10"/><l facs="#l10"><persName ref="#Guenievre">royne</persName> voit quil est ble</l>
-                <lb n="11"/><l facs="#l11">ciez si li demanda qui</l>
-                <lb n="12"/><l facs="#l12">le bleca ainssi &C;ertes</l>
-                <lb n="13"/><l facs="#l13">dame fait il li &chevalier;s &que;</l>
-                <lb n="14"/><l facs="#l14">ie vous di ma blecie li</l>
-                <lb n="15"/><l facs="#l15">chair si durement que</l>
-                <lb n="16" type="rejet" corresp="#n17"/><l facs="#l16">ie me blecea ainsi c&om;</l>
-                <lb xml:id="n17" n="17"/><l facs="#l17">me vous veez &L;ors &par;</l>
-                <lb n="18"/><l facs="#l18">la la pucele qui leseu</l>
-                <lb n="19"/><l facs="#l19">avoit aporte &et; dist a</l>
-                <lb n="20"/><l facs="#l20">la<persName ref="#Guenievre">royne</persName> dame fait ele</l>
-                <lb n="21"/><l facs="#l21">salus vous mande la</l>
-                <lb n="22"/><l facs="#l22">plus sage pucele qui</l>
-                <lb n="23"/><l facs="#l23">orendroit vive et la</l>
-                <lb n="24"/><l facs="#l24">plus bele que ie sache</l>
-                <lb n="25"/><l facs="#l25">a mon enscient. et si</l>
-                <lb n="26"/><l facs="#l26">vous mande que vous</l>
-                <lb n="27"/><l facs="#l27">gardez cest escu pour</l>
-                <lb n="28"/><l facs="#l28">lamour delui et dau</l>
-                <lb type="rejet" n="29"/><l facs="#l29">trui que vous plus a</l>
-                <lb n="30" type="rejet" corresp="#n31"/><l facs="#l30">mez et si vous man</l>
-                <lb xml:id="n31" n="31"/><l facs="#l31">de quele est cele monde</l>
-                <lb n="32"/><l facs="#l32">qui plus scet de uos <unclear reason="illegible"
+                <lb n=""/><l facs="#l5">doit et il respont quil</l>
+                <lb n=""/><l facs="#l6">ne scet ou mais il c&om;</l>
+                <lb n=""/><l facs="#l7">manda que ie le vous</l>
+                <lb n=""/><l facs="#l8">deisse et vous le connois</l>
+                <lb n=""/><l facs="#l9">troiz bien &E;t quant la</l>
+                <lb n=""/><l facs="#l10"><persName ref="#Guenievre">royne</persName> voit quil est ble</l>
+                <lb n=""/><l facs="#l11">ciez si li demanda qui</l>
+                <lb n=""/><l facs="#l12">le bleca ainssi &C;ertes</l>
+                <lb n=""/><l facs="#l13">dame fait il li &chevalier;s &que;</l>
+                <lb n=""/><l facs="#l14">ie vous di ma blecie li</l>
+                <lb n=""/><l facs="#l15">chair si durement que</l>
+                <lb n=""/><l facs="#l16">ie me blecea ainsi c&om;</l>
+                <lb n=""/><l facs="#l17">me vous veez &L;ors &par;</l>
+                <lb n=""/><l facs="#l18">la la pucele qui leseu</l>
+                <lb n=""/><l facs="#l19">avoit aporte &et; dist a</l>
+                <lb n=""/><l facs="#l20">la<persName ref="#Guenievre">royne</persName> dame fait ele</l>
+                <lb n=""/><l facs="#l21">salus vous mande la</l>
+                <lb n=""/><l facs="#l22">plus sage pucele qui</l>
+                <lb n=""/><l facs="#l23">orendroit vive et la</l>
+                <lb n=""/><l facs="#l24">plus bele que ie sache</l>
+                <lb n=""/><l facs="#l25">a mon enscient. et si</l>
+                <lb n=""/><l facs="#l26">vous mande que vous</l>
+                <lb n=""/><l facs="#l27">gardez cest escu pour</l>
+                <lb n=""/><l facs="#l28">lamour delui et dau</l>
+                <lb n=""/><l facs="#l29">trui que vous plus a</l>
+                <lb n=""/><l facs="#l30">mez et si vous man</l>
+                <lb n=""/><l facs="#l31">de quele est cele monde</l>
+                <lb n=""/><l facs="#l32">qui plus scet de uos <unclear reason="illegible"
                     >&com;<expan>com</expan></unclear></l>
-                <lb n="33" type="rejet" corresp="#n34"/><l facs="#l33">sans et qui plus si a</l>
-                <lb xml:id="n34" n="34"/><l facs="#l34">corde &C;ar ele aime ce</l>
-                <lb n="35"/><l facs="#l35">que vous amez et &bien;</l>
-                <lb n="36"/><l facs="#l36">sachiez que se vous</l>
-                <lb n="37"/><l facs="#l37">cest eleu gardez elle</l>
-                <lb n="38"/><l facs="#l38">vous getera de la pl&us;</l>
-                <lb n="39"/><l facs="#l39">grant dolour ou <unclear reason="illegible">ro&us;</unclear></l>
-                <lb n="40"  type="rejet" corresp="#n41"/><l facs="#l40">fassiez onques et me</l>
-                <lb xml:id="n41" n="41"/><l facs="#l41">tra en la greignour</l>
-                <lb n="42"/><l facs="#l42">ioie ou vous fussiez li</l>
-                <lb n="43" type="rejet" corresp="#n44"/><l facs="#l43"><unclear reason="illegible">meust</unclear> diex fait la roy</l>
-                <lb xml:id="n44" n="44"/><l facs="#l44">ne li esccuz fait &bien; <unclear reason="illegible"
+                <lb n=""/><l facs="#l33">sans et qui plus si a</l>
+                <lb n=""/><l facs="#l34">coste &C;ar ele aime ce</l>
+                <lb n=""/><l facs="#l35">que vous amez et &bien;</l>
+                <lb n=""/><l facs="#l36">sachiez quele vous</l>
+                <lb n=""/><l facs="#l37">cest eleu gardez elle</l>
+                <lb n=""/><l facs="#l38">vous getera de la pl&us;</l>
+                <lb n=""/><l facs="#l39">grant dolour ou <unclear reason="illegible">ro&us;</unclear></l>
+                <lb n=""/><l facs="#l40">fassiez onques et me</l>
+                <lb n=""/><l facs="#l41">tra en la greignour</l>
+                <lb n=""/><l facs="#l42">ioie ou vous fussiez li</l>
+                <lb n=""/><l facs="#l43"><unclear reason="illegible">meust</unclear> diex fait la roy</l>
+                <lb n=""/><l facs="#l44">ne li esccuz fait &bien; <unclear reason="illegible"
                     >agi</unclear></l>
-                <lb n="45"/><l facs="#l45"><unclear>der</unclear> et bonne aventure</l>
-                <lb n="46" type="rejet" corresp="#n47" /><l facs="#l46">eut la pucele qui le m&en;</l>
-                <lb xml:id="n47" n="47"/><l facs="#l47">voioa &et; vous qui la por</l>
-                <lb n="48" type="rejet" corresp="#n49"/><l facs="#l48">tastes soiez la bien ve</l>
-                <lb xml:id="n49" n="49"/><l facs="#l49">nue pour dieu qui est</l>
-                <lb n="50"/><l facs="#l50">la pucele dites le nous</l>
-                <lb n="51" type="rejet" corresp="#n52"/><l facs="#l51">&D;ame fait ele ie la n&om;;</l>
-                <lb xml:id="n52"/><l facs="#l52">merai seie onques puis</l>
-                <lb n="53"/><l facs="#l53">&E;le est apelee la pucele</l>
-                <lb n="54" type="rejet" corresp="#n55"/><l facs="#l54">del lac &E;t quant la roy</l>
+                <lb n=""/><l facs="#l45"><unclear>der</unclear> et bonne aventure</l>
+                <lb n=""/><l facs="#l46">eut la pucele qui le m&en;</l>
+                <lb n=""/><l facs="#l47">voioa &et; vous qui la por</l>
+                <lb n=""/><l facs="#l48">tastes soiez la bien ve</l>
+                <lb n=""/><l facs="#l49">nue pour dieu qui est</l>
+                <lb n=""/><l facs="#l50">la pucele dites le nous</l>
+                <lb n=""/><l facs="#l51">&D;ame fait ele ie la n&om;;</l>
+                <lb n=""/><l facs="#l52">merai seie onques puis</l>
+                <lb n=""/><l facs="#l53">&E;le est apelee la pucele</l>
+                <lb n=""/><l facs="#l54">del lac &E;t quant la roy</l>
                 
                 <cb n="3"/>
-                <lb xml:id="n55" n="55"/><l facs="#l55">ne lentent si scet bien</l>
-                <lb n="56"/><l facs="#l56">maintenant qui ele</l>
-                <lb n="57"/><l facs="#l57">est. lors saisi la pucele</l>
-                <lb n="58"/><l facs="#l58">qui lescu avoit aporte</l>
-                <lb n="59" type="rejet" corresp="#n60"/><l facs="#l59">si li fait si grant ioie &com;</l>
-                <lb xml:id="n60" n="60"/><l facs="#l60">me ele plus puet &et; li</l>
-                <lb n="61"/><l facs="#l61">oste ele meismes lescu</l>
-                <lb n="62"/><l facs="#l62">du col si le regarde am&on;t</l>
-                <lb n="63"/><l facs="#l63">&et; aval &et; voit quil est</l>
-                <lb n="64"/><l facs="#l64">tous fendus des lepie</l>
-                <lb n="65"/><l facs="#l65">iusquen la penne am&on;t.</l>
-                <lb n="66" type="rejet" corresp="#n67"/><l facs="#l66">&N;e netiennent les II p(ar)</l>
-                <lb xml:id="n67" n="67"/><l facs="#l67">ties arien fors aux bras</l>
-                <lb n="68"/><l facs="#l68">de la boucle de lescu qui</l>
-                <lb n="69"/><l facs="#l69">&moult; ert riche &et; bele &et; to&us;</l>
-                <lb n="70"/><l facs="#l70">les II moities si loing</l>
-                <lb n="71"/><l facs="#l71">lun de lautre que len</l>
-                <lb n="72"/><l facs="#l72">puet entredeuz <unclear reason="illegible">fichier</unclear></l>
-                <lb n="73"/><l facs="#l73">sa main sans atouchier</l>
-                <lb n="74"/><l facs="#l74">aus .II. moities fu lune</l>
-                <lb n="75"/><l facs="#l75">pres de lautre des &par;ties</l>
-                <lb n="76"/><l facs="#l76">de lescu avoit pourtir</l>
-                <lb n="77" type="rejet" corresp="#n78"/><l facs="#l77">.I. &chevalier; si richement ar</l>
-                <lb xml:id="n78" n="78"/><l facs="#l78">me fors le chief concil</l>
-                <lb n="79"/><l facs="#l79">le sot mier faire quile</l>
-                <lb n="80" type="rejet" corresp="#n81"/><l facs="#l80">fist. &E;t en lautre moi</l>
-                <lb xml:id="n81" n="81"/><l facs="#l81">tie estoit pourtraite une</l>
-                <lb n="82"/><l facs="#l82">damoisele aussi bele c&omme;</l>
-                <lb n="83" type="rejet" corresp="#n84"/><l facs="#l83">len puet onques plus be</l>
-                <lb xml:id="n84" n="84"/><l facs="#l84">le paindre si estoit par</l>
-                <lb n="85"/><l facs="#l85">en haut sipres a&pre;s a&pre;s</l>
-                <lb n="86" type="rejet" corresp="#n87"/><l facs="#l86">lun de lautre &que; li uns te</l>
-                <lb xml:id="n87" n="87"/><l facs="#l87">noit alautre son bras sor</l>
-                <lb n="88"/><l facs="#l88">le col et sentrebarlent se</l>
-                <lb n="89" type="rejet" corresp="#n90"/><l facs="#l89">ne fust la fendure de les</l>
-                <lb xml:id="n90" n="90"/><l facs="#l90">cu et par dessouz estoi&en;t</l>
-                <lb n="91"/><l facs="#l91">si loing aloing que pl&us;</l>
-                <lb n="92"/><l facs="#l92">proient.</l>
-                <lb n="93"/><l facs="#l93">C&omme; la <persName ref="#Guenievre">royne</persName> dist ala</l>
-                <lb n="94" type="rejet" corresp="#n95"/><l facs="#l94">pucele &C;ertes da</l>
-                <lb xml:id="n95" n="95"/><l facs="#l95">moisele cist escu est &moult;</l>
-                <lb n="96"/><l facs="#l96">gentis sil ne fust fend&us;</l>
-                <lb n="97"/><l facs="#l97">et dites moi par la <unclear reason="illegible">riens</unclear></l>
-                <lb n="98"/><l facs="#l98">que vous plus ames &que; </l>
-                <lb n="99"/><l facs="#l99">ce senefie &C;ar il pert estre</l>
-                <lb n="100"/><l facs="#l100">touz froiz et du &chevalier; &et;</l>
-                <lb n="101"/><l facs="#l101">de la damoisele qui pour</l>
-                <lb n="102"/><l facs="#l102">trait y sont menredites</l>
-                <lb n="103"/><l facs="#l103">la verite sanz mentir et</l>
-                <lb n="104"/><l facs="#l104">la pucele li dist. &D;ame</l>
-               
+                <lb n=""/><l facs="#l55">ne lentent si scet bien</l>
+                <lb n=""/><l facs="#l56">maintenant qui ele</l>
+                <lb n=""/><l facs="#l57">est. lors saisi la pucele</l>
+                <lb n=""/><l facs="#l58">qui lescu avoit aporte</l>
+                <lb n=""/><l facs="#l59">si li fait si grant ioie &com;</l>
+                <lb n=""/><l facs="#l60">me ele plus puet &et; li</l>
+                <lb n=""/><l facs="#l61">oste ele meismes lescu</l>
+                <lb n=""/><l facs="#l62">du col si le regarde am&on;t</l>
+                <lb n=""/><l facs="#l63">&et; aval &et; voit quil est</l>
+                <lb n=""/><l facs="#l64">tous fendus des lepie</l>
+                <lb n=""/><l facs="#l65">iusquen la penne am&on;t.</l>
+                <lb n=""/><l facs="#l66">&N;e netiennent les II p(ar)</l>
+                <lb n=""/><l facs="#l67">ties arien fors aux bras</l>
+                <lb n=""/><l facs="#l68">de la boucle de lescu qui</l>
+                <lb n=""/><l facs="#l69">&moult; ert riche &et; bele &et; to&us;</l>
+                <lb n=""/><l facs="#l70">les II moities si loing</l>
+                <lb n=""/><l facs="#l71">lun de lautre que len</l>
+                <lb n=""/><l facs="#l72">puet entredeuz <unclear reason="illegible">fichier</unclear></l>
+                <lb n=""/><l facs="#l73">sa main sans atouchier</l>
+                <lb n=""/><l facs="#l74">aus .II. moities fu lune</l>
+                <lb n=""/><l facs="#l75">pres de lautre des &par;ties</l>
+                <lb n=""/><l facs="#l76">de lescu avoit pourtir</l>
+                <lb n=""/><l facs="#l77">.I. &chevalier; si richement ar</l>
+                <lb n=""/><l facs="#l78">me fors le chief concil</l>
+                <lb n=""/><l facs="#l79">le sot mier faire quile</l>
+                <lb n=""/><l facs="#l80">fist. &E;t en lautre moi</l>
+                <lb n=""/><l facs="#l81">tie estoit pourtraite une</l>
+                <lb n=""/><l facs="#l82">damoisele aussi bele c&omme;</l>
+                <lb n=""/><l facs="#l83">len puet onques plus be</l>
+                <lb n=""/><l facs="#l84">le paindre si estoit par</l>
+                <lb n=""/><l facs="#l85">en haut sipres a&pre;s a&pre;s</l>
+                <lb n=""/><l facs="#l86">lun de lautre &que; li uns te</l>
+                <lb n=""/><l facs="#l87">noit alautre son bras sor</l>
+                <lb n=""/><l facs="#l88">le col et sentrebarlent se</l>
+                <lb n=""/><l facs="#l89">ne fust la fendure de les</l>
+                <lb n=""/><l facs="#l90">cu et par dessouz estoi&en;t</l>
+                <lb n=""/><l facs="#l91">si loing aloing que pl&us;</l>
+                <lb n=""/><l facs="#l92">proient.</l>
+                <lb n=""/><l facs="#l93">C&omme; la <persName ref="#Guenievre">royne</persName> dist ala</l>
+                <lb n=""/><l facs="#l94">pucele &C;ertes da</l>
+                <lb n=""/><l facs="#l95">moisele cist escu est &moult;</l>
+                <lb n=""/><l facs="#l96">gentis sil ne fust fend&us;</l>
+                <lb n=""/><l facs="#l97">et dites moi par la <unclear reason="illegible">riens</unclear></l>
+                <lb n=""/><l facs="#l98">que vous plus ames &que; </l>
+                <lb n=""/><l facs="#l99">ce senefie &C;ar il pert estre</l>
+                <lb n=""/><l facs="#l100">touz froiz et du &chevalier; &et;</l>
+                <lb n=""/><l facs="#l101">de la damoisele qui pour</l>
+                <lb n=""/><l facs="#l102">trait y sont menredites</l>
+                <lb n=""/><l facs="#l103">la verite sanz mentir et</l>
+                <lb n=""/><l facs="#l104">la pucele li dist. &D;ame</l>
+                
                 <milestone unit="surface"
                     facs="https://gallica.bnf.fr/ark:/12148/btv1b6000418r/f219.item" xml:id="s104r"/>
                 <pb facs="https://gallica.bnf.fr/ark:/12148/btv1b6000418r/f219.item" n="104r"
                     xml:id="f104r"/>
-               
+                
                 <cb n="1"/>
-                <lb n="105"/><l facs="#l105">il est un &chevalier; lemeilleur</l>
-                <lb n="106"/><l facs="#l106">qui orendroit soit si pria</l>
-                <lb n="107"/><l facs="#l107">une dame damours la</l>
-                <lb n="108" type="rejet" corresp="#n109"/><l facs="#l108">plus vaillans qui ore vi</l>
-                <lb xml:id="n109" n="109"/><l facs="#l109">ve <unclear reason="illegible">aumien</unclear>audier<unclear
+                <lb n=""/><l facs="#l105">il est un &chevalier; lemeilleur</l>
+                <lb n=""/><l facs="#l106">qui orendroit soit si pria</l>
+                <lb n=""/><l facs="#l107">une dame damours la</l>
+                <lb n=""/><l facs="#l108">plus vaillans qui ore vi</l>
+                <lb n=""/><l facs="#l109">ve <unclear reason="illegible">aumien</unclear>audier<unclear
                     reason="illegible">&en;a</unclear> &et;</l>
-                <lb n="110" type="rejet" corresp="#n111"/><l facs="#l110">fist li &chevalier;s que par prie</l>
-                <lb xml:id="n111" n="111"/><l facs="#l111">re que par oir que la da</l>
-                <lb n="112"/><l facs="#l112">me li otroia lamour</l>
-                <lb n="113"/><l facs="#l113">mais plus nia encore</l>
-                <lb n="114"/><l facs="#l114">que le baisier &et; lacoler</l>
-                <lb n="115"/><l facs="#l115">li comme vous veez en </l>
-                <lb n="116" type="rejet" corresp="#n117" /><l facs="#l116">cest esta &E;t quant il a</l>
-                <lb xml:id="n117" n="117"/><l facs="#l117">rendra que liamours</l>
-                <lb n="118"/><l facs="#l118">sera enterine si sachiez</l>
-                <lb n="119"/><l facs="#l119">que esaiz qui si est</l>
-                <lb n="120"/><l facs="#l120">desioins se reioindra &et;</l>
-                <lb n="121"/><l facs="#l121">tendront ensamble les </l>
-                <lb n="122" type="rejet" corresp="#n123"/><l facs="#ll22">.II. parties si sachiez a</l>
-                <lb xml:id="n123" n="123"/><l facs="#l123">lors serez delivre du</l>
-                <lb n="124" type="rejet" corresp="#n125"/><l facs="#l124">greignour duel qui on</l>
-                <lb xml:id="n125" n="125"/><l facs="#l125">ques vous aueuist &et; le</l>
-                <lb n="126"/><l facs="#l126">roiz en la greignour ioie</l>
-                <lb n="127"/><l facs="#l127">que vous onques eussiez</l>
-                <lb n="128"/><l facs="#l128">mais ce navendra de</l>
-                <lb n="129"/><l facs="#l129">vant que li miendres</l>
-                <lb n="130"/><l facs="#l130">&chevalier;s qui soit hors dela</l>
-                <lb n="131"/><l facs="#l131">maison le roy artu soit</l>
-                <lb n="132"/><l facs="#l132">devenus de sa <unclear reason="illegible">maisniee</unclear></l>
-                <lb n="133"/><l facs="#l133">et se ie disoie quil fust</l>
-                <lb n="134" type="rejet" corresp="#n135"/><l facs="#l134">le meilleur dedenz &et; de</l>
-                <lb xml:id="n135" n="135"/><l facs="#l135">hors sine mentiroie ie</l>
-                <lb n="136" type="rejet" corresp="#n137"/><l facs="#l136">mie tant en ai or reti</l>
-                <lb xml:id="n137" n="137"/><l facs="#l137">re &C;ar par <damage degree="high"/></l>
-                <lb n="138"/><l facs="#l138">fait darmes en peude</l>
-                <lb n="139"/><l facs="#l139">temps plus &que; nuls.</l>
-                <lb n="140"/><l facs="#l140">De ces nouveles</l>
+                <lb n=""/><l facs="#l110">fist li &chevalier;s que par prie</l>
+                <lb n=""/><l facs="#l111">re que par oir que la da</l>
+                <lb n=""/><l facs="#l112">me li otroia lamour</l>
+                <lb n=""/><l facs="#l113">mais plus nia encore</l>
+                <lb n=""/><l facs="#l114">que le baisier &et; lacoler</l>
+                <lb n=""/><l facs="#l115">li comme vous veez en </l>
+                <lb n=""/><l facs="#l116">cest esta &E;t quant il a</l>
+                <lb n=""/><l facs="#l117">rendra que liamours</l>
+                <lb n=""/><l facs="#l118">sera enterine si sachiez</l>
+                <lb n=""/><l facs="#l119">que esaiz qui si est</l>
+                <lb n=""/><l facs="#l120">desioins se reioindra &et;</l>
+                <lb n=""/><l facs="#l121">tendront ensamble les </l>
+                <lb n=""/><l facs="#ll22">.II. parties si sachiez a</l>
+                <lb n=""/><l facs="#l123">lors serez delivre du</l>
+                <lb n=""/><l facs="#l124">greignour duel qui on</l>
+                <lb n=""/><l facs="#l125">ques vous aueuist &et; le</l>
+                <lb n=""/><l facs="#l126">roiz en la greignour ioie</l>
+                <lb n=""/><l facs="#l127">que vous onques eussiez</l>
+                <lb n=""/><l facs="#l128">mais ce navendra de</l>
+                <lb n=""/><l facs="#l129">vant que li miendres</l>
+                <lb n=""/><l facs="#l130">&chevalier;s qui soit hors dela</l>
+                <lb n=""/><l facs="#l131">maison le roy artu soit</l>
+                <lb n=""/><l facs="#l132">devenus de sa <unclear reason="illegible">maisniee</unclear></l>
+                <lb n=""/><l facs="#l133">et se ie disoie quil fust</l>
+                <lb n=""/><l facs="#l134">le meilleur dedenz &et; de</l>
+                <lb n=""/><l facs="#l135">hors sine mentiroie ie</l>
+                <lb n=""/><l facs="#l136">mie tant en ai or reti</l>
+                <lb n=""/><l facs="#l137">re &C;ar par <damage degree="high"/></l>
+                <lb n=""/><l facs="#l138">fait darmes en peude</l>
+                <lb n=""/><l facs="#l139">temps plus &que; nuls.</l>
+                <lb n=""/><l facs="#l140">De ces nouveles</l>
                 <!-- ref="#D3" -->
-                <lb n="141" type="rejet" corresp="#n142"/><l facs="#l141">fu &moult; liee la roy</l>
-                <lb xml:id="n142" n="142"/><l facs="#l142">ne et retint la damoise</l>
-                <lb n="143"/><l facs="#l143">le a &moult; &grant; feste &et; bi&en;</l>
-                <lb n="144"/><l facs="#l144">pensa en son <unclear reason="illegible">cuer ci</unclear>li</l>
-                <lb n="145" type="rejet" corresp="#n146"/><l facs="#l145">&chevalier;s proit estre. lors &par;</l>
-                <lb xml:id="n146" n="146" type="rejet" corresp="#n147"/><l facs="#l146">la li &chevalier; bleciez et dem&an;</l>
-                <lb xml:id="n147" n="147"/><l facs="#l147">da congie a la <persName ref="#Genievre">royne</persName> et</l>
-                <lb n="148"/><l facs="#l148">dist quil avoit encore</l>
-                <lb n="149"/><l facs="#l149">&moult; a errer et ele li dit <unclear reason="illegible">quil</unclear></l>
-                <lb n="150"/><l facs="#l150">remaigne tant quil</l>
-                <lb n="151"/><l facs="#l151">fust gracis de son bras</l>
-                <lb n="152" type="rejet" corresp="#n153"/><l facs="#l152">car de chevauchier na</l>
-                <lb xml:id="n153" n="153"/><l facs="#l153">voit il ore nul mestier.</l>
-                <lb n="154"/><l facs="#l154">&E;t cil dit que a faire li</l>
+                <lb n=""/><l facs="#l141">fu &moult; liee la roy</l>
+                <lb n=""/><l facs="#l142">ne et retint la damoise</l>
+                <lb n=""/><l facs="#l143">le a &moult; &grant; feste &et; bi&en;</l>
+                <lb n=""/><l facs="#l144">pensa en son <unclear reason="illegible">cuer ci</unclear>li</l>
+                <lb n=""/><l facs="#l145">&chevalier;s proit estre. lors &par;</l>
+                <lb n=""/><l facs="#l146">la li &chevalier; bleciez et dem&an;</l>
+                <lb n=""/><l facs="#l147">da congie a la <persName ref="#Genievre">royne</persName> et</l>
+                <lb n=""/><l facs="#l148">dist quil avoit encore</l>
+                <lb n=""/><l facs="#l149">&moult; a errer et ele li dit <unclear reason="illegible"
+                    >quil</unclear></l>
+                <lb n=""/><l facs="#l150">remaigne tant quil</l>
+                <lb n=""/><l facs="#l151">fust gracis de son bras</l>
+                <lb n=""/><l facs="#l152">car de chevauchier na</l>
+                <lb n=""/><l facs="#l153">voit il ore nul mestier.</l>
+                <lb n=""/><l facs="#l154">&E;t cil dit que a faire li</l>
                 
                 <cb n="2"/>
-                <lb n="155"/><l facs="#l155">convenoit &C;ar li &chevalier;s</l>
-                <lb n="156"/><l facs="#l156">qui conquis lavoit</l>
-                <lb n="157"/><l facs="#l157">li fist fiancier que si</l>
-                <lb n="158"/><l facs="#l158">tost comme il auroit</l>
-                <lb n="159" type="rejet" corresp="#n160"/><l facs="#l159">este a la <persName ref="#Genievre">royne</persName> quil o</l>
-                <lb xml:id="n160" n="160"/><l facs="#l160">roit ala dame derober</l>
-                <lb n="161"/><l facs="#l161"><unclear reason="illegible">tot</unclear> &et; ie ne sai dame ou</l>
-                <lb n="162"/><l facs="#l162">ce est conques ni fuy</l>
-                <lb n="163"/><l facs="#l163">&Q;uant la dame de ro</l>
-                <lb n="164"/><l facs="#l164">&H;ector lentent si sant</l>
-                <lb n="165"/><l facs="#l165">avant &et; demande du</l>
-                <lb n="166" type="rejet" corresp="#n167"/><l facs="#l166">&chevalier; nouveles &et; dist &an;</l>
-                <lb xml:id="n167" n="167" type="rejet" corresp="#n168"/><l facs="#l167">ce est ele acui il len</l>
-                <lb xml:id="n168" n="168"/><l facs="#l168">voie &D;ame sauve &vostre;</l>
-                <lb n="169"/><l facs="#l169">grace ie nel sai mie</l>
-                <lb n="170"/><l facs="#l170">mais se madame la <persName ref="#Genievre">roy</persName></l>
-                <lb n="171"/><l facs="#l171"><damage degree="low">ne le dit</damage> ie len croirra tres</l>
-                <lb n="172"/><l facs="#l172">bien et a la <persName ref="#Genievre">royne</persName>est</l>
-                <lb n="173"/><l facs="#l173">&moult; tart que ele oie</l>
-                <lb n="174"/><l facs="#l174">nouveles du &chevalier; &S;i</l>
-                <lb n="175"/><l facs="#l175">tesmoingne que ce est</l>
-                <lb n="176"/><l facs="#l176">elle. &D;ame fait il il est</l>
-                <lb n="177"/><l facs="#l177">&bien; droiz que ie vous</l>
-                <lb n="178"/><l facs="#l178">encRoie Et benois soit</l>
-                <lb n="179" type="rejet" corresp="#n180"/><l facs="#l179">diex qui si pres le ma a</l>
-                <lb xml:id="n180" n="180"/><l facs="#l180">menee. &L;ors la dist da</l>
-                <lb n="181"/><l facs="#l181">me li &chevalier;s qui &vostre;</l>
-                <lb n="182"/><l facs="#l182">bataille fist contre </l>
-                <lb n="183"/><l facs="#l183"><persName ref="Segurades">&S;e<lb n=""/><lb/>gurade</persName> vous mande</l>
-                <lb n="184"/><l facs="#l184">que sil venoit en point</l>
-                <lb n="185"/><l facs="#l185">de &vostre; besoing et il </l>
-                <lb n="186"/><l facs="#l186">vous oubliaoit autresi</l>
-                <lb n="187"/><l facs="#l187">com vous feistes lui qil</l>
-                <lb n="188"/><l facs="#l188">ne voudroit que autres</l>
-                <lb n="189"/><l facs="#ll89">ne vous len blasmast</l>
-                <lb n="190"/><l facs="#l190">&C;ar vous lauez deservi</l>
-                <lb n="191"/><l facs="#ll91">et &vostre; seneschal verroie</l>
-                <lb n="192"/><l facs="#l192">ie volentiers et &H;ector.</l>
-                <lb n="193"/><l facs="#l193">&E;t cil saillent avant</l>
-                <lb n="194"/><l facs="#l194">et demandent nouveles</l>
-                <lb n="195"/><l facs="#l195">du &chevalier; et el lor endist</l>
-                <lb n="196" type="rejet" corresp="#n197"/><l facs="#l196">telles comme el les vo</l>
-                <lb xml:id="n197" n="197" type="rejet" corresp="#n198"/><l facs="#l197">loit oir. &E;t dist au senes</l>
-                <lb xml:id="n198" n="198"/><l facs="#l198">chal &S;ire li &chevalier;s qui se</l>
-                <lb n="199"/><l facs="#l199">combati contre <persName ref="Segurades">&S;egurades</persName></l>
-                <lb n="200" type="rejet" corresp="#n201"/><l facs="#l200">vous salue comme ce</l>
-                <lb xml:id="n201" n="201"/><l facs="#1201">lui que il veult tenir a</l>
-                <lb n="202" type="rejet" corresp="#n203"/><l facs="#l202">seignour &et; ami &et; men</l>
-                <lb xml:id="n203" n="203"/><l facs="#l203">voie en &vostre; prison. &C;ar</l>
-                <lb n="204"/><l facs="#l204">il seet &bien; que vous ne</l>
+                <lb n=""/><l facs="#l155">convenoit &C;ar li &chevalier;s</l>
+                <lb n=""/><l facs="#l156">qui conquis lavoit</l>
+                <lb n=""/><l facs="#l157">li fist fiancier que si</l>
+                <lb n=""/><l facs="#l158">tost comme il auroit</l>
+                <lb n=""/><l facs="#l159">este a la <persName ref="#Genievre">royne</persName> quil o</l>
+                <lb n=""/><l facs="#l160">roit ala dame derober</l>
+                <lb n=""/><l facs="#l161"><unclear reason="illegible">tot</unclear> &et; ie ne sai dame ou</l>
+                <lb n=""/><l facs="#l162">ce est conques ni fuy</l>
+                <lb n=""/><l facs="#l163">&Q;uant la dame de ro</l>
+                <lb n=""/><l facs="#l164">&H;ector lentent si sant</l>
+                <lb n=""/><l facs="#l165">avant &et; demande du</l>
+                <lb n=""/><l facs="#l166">&chevalier; nouveles &et; dist &an;</l>
+                <lb n=""/><l facs="#l167">ce est ele acui il len</l>
+                <lb n=""/><l facs="#l168">voie &D;ame sauve &vostre;</l>
+                <lb n=""/><l facs="#l169">grace ie nel sai mie</l>
+                <lb n=""/><l facs="#l170">mais se madame la <persName ref="#Genievre">roy</persName></l>
+                <lb n=""/><l facs="#l171"><damage degree="low">ne le dit</damage> ie len croirra tres</l>
+                <lb n=""/><l facs="#l172">bien et a la <persName ref="#Genievre">royne</persName>est</l>
+                <lb n=""/><l facs="#l173">&moult; tart que ele oie</l>
+                <lb n=""/><l facs="#l174">nouveles du &chevalier; &S;i</l>
+                <lb n=""/><l facs="#l175">tesmoingne que ce est</l>
+                <lb n=""/><l facs="#l176">elle. &D;ame fait il il est</l>
+                <lb n=""/><l facs="#l177">&bien; droiz que ie vous</l>
+                <lb n=""/><l facs="#l178">encRoie Et benois soit</l>
+                <lb n=""/><l facs="#l179">diex qui si pres le ma a</l>
+                <lb n=""/><l facs="#l180">menee. &L;ors la dist da</l>
+                <lb n=""/><l facs="#l181">me li &chevalier;s qui &vostre;</l>
+                <lb n=""/><l facs="#l182">bataille fist contre </l>
+                <lb n=""/><l facs="#l183"><persName ref="Segurades">&S;e<lb n=""/><lb/>gurade</persName> vous mande</l>
+                <lb n=""/><l facs="#l184">que sil venoit en point</l>
+                <lb n=""/><l facs="#l185">de &vostre; besoing et il </l>
+                <lb n=""/><l facs="#l186">vous oubliaoit autresi</l>
+                <lb n=""/><l facs="#l187">com vous feistes lui qil</l>
+                <lb n=""/><l facs="#l188">ne voudroit que autres</l>
+                <lb n=""/><l facs="#ll89">ne vous len blasmast</l>
+                <lb n=""/><l facs="#l190">&C;ar vous lauez deservi</l>
+                <lb n=""/><l facs="#ll91">et &vostre; seneschal verroie</l>
+                <lb n=""/><l facs="#l192">ie volentiers et &H;ector.</l>
+                <lb n=""/><l facs="#l193">&E;t cil saillent avant</l>
+                <lb n=""/><l facs="#l194">et demandent nouveles</l>
+                <lb n=""/><l facs="#l195">du &chevalier; et el lor endist</l>
+                <lb n=""/><l facs="#l196">telles comme el les vo</l>
+                <lb n=""/><l facs="#l197">loit oir. &E;t dist au senes</l>
+                <lb n=""/><l facs="#l198">chal &S;ire li &chevalier;s qui se</l>
+                <lb n=""/><l facs="#l199">combati contre <persName ref="Segurades">&S;egurades</persName></l>
+                <lb n=""/><l facs="#l200">vous salue comme ce</l>
+                <lb n=""/><l facs="#1201">lui que il veult tenir a</l>
+                <lb n=""/><l facs="#l202">seignour &et; ami &et; men</l>
+                <lb n=""/><l facs="#l203">voie en &vostre; prison. &C;ar</l>
+                <lb n=""/><l facs="#l204">il seet &bien; que vous ne</l>
                 
                 <cb n="3"/>
-                <lb n="205"/><l facs="#l205">me voudriez ne mal ne</l>
-                <lb n="206"/><l facs="#l206">vilonnie. &E;t li senescha&us;</l>
-                <lb n="207"/><l facs="#l207">le recut a&moult; &grant; ioie &et;</l>
-                <lb n="208"/><l facs="#l208">dist que pour lamour de</l>
-                <lb n="209"/><l facs="#l209">li sera il &bien; venus. <persName ref="#Arthur"
+                <lb n=""/><l facs="#l205">me voudriez ne mal ne</l>
+                <lb n=""/><l facs="#l206">vilonnie. &E;t li senescha&us;</l>
+                <lb n=""/><l facs="#l207">le recut a&moult; &grant; ioie &et;</l>
+                <lb n=""/><l facs="#l208">dist que pour lamour de</l>
+                <lb n=""/><l facs="#l209">li sera il &bien; venus. <persName ref="#Arthur"
                     >&S;ire</persName></l>
-                <lb n="210"/><l facs="#l210">fait il il vous mercie de</l>
-                <lb n="211"/><l facs="#l211">ce que vous la portaster</l>
-                <lb n="212" type="rejet" corresp="#n213"/><l facs="#l212">son glaive avant il a</l>
-                <lb xml:id="n213" n="213"/><l facs="#l213">la ala bataille et fustes</l>
-                <lb n="214"/><l facs="#l214">ses escuiers. &L;ors se fait</l>
-                <lb n="215"/><l facs="#l215">li &chevalier;s descaindre une</l>
-                <lb n="216"/><l facs="#l216">espee que il avoit sainte</l>
-                <lb n="217"/><l facs="#l217">avec la soie. &S;i la trait.</l>
-                <lb n="218"/><l facs="#l218">et apres dit que li &chevalier;s</l>
-                <lb n="219"/><l facs="#l219">li envoie pour ce quil la</l>
-                <lb n="220"/><l facs="#l220">aude avoir bien emploie</l>
-                <lb n="221"/><l facs="#l221">li sachiez fait il quil la</l>
-                <lb n="222"/><l facs="#l222">vous envoie tele c&om;me</l>
-                <lb n="223"/><l facs="#l223">il vous convient &et; &com;me</l>
-                <lb n="224"/><l facs="#l224">cele quil a esprouvee.</l>
-                <lb n="225"/><l facs="#l225">ou autrement ne le vous</l>
-                <lb n="226"/><l facs="#l226">envoiast il mie &E;t si me</l>
-                <lb n="227"/><l facs="#l227">commanda que ie vous</l>
-                <lb n="228"/><l facs="#l228">deisse que a preudomme</l>
-                <lb n="229" type="rejet" corresp="#n230"/><l facs="#l229">et apreu &chevalier; doit len en</l>
-                <lb xml:id="n230" n="230"/><l facs="#l230">voier present. </l>
+                <lb n=""/><l facs="#l210">fait il il vous mercie de</l>
+                <lb n=""/><l facs="#l211">ce que vous la portaster</l>
+                <lb n=""/><l facs="#l212">son glaive avant il a</l>
+                <lb n=""/><l facs="#l213">la ala bataille et fustes</l>
+                <lb n=""/><l facs="#l214">ses escuiers. &L;ors se fait</l>
+                <lb n=""/><l facs="#l215">li &chevalier;s descaindre une</l>
+                <lb n=""/><l facs="#l216">espee que il avoit sainte</l>
+                <lb n=""/><l facs="#l217">avec la soie. &S;i la trait.</l>
+                <lb n=""/><l facs="#l218">et apres dit que li &chevalier;rs</l>
+                <lb n=""/><l facs="#l219">li envoie pour ce quil la</l>
+                <lb n=""/><l facs="#l220">aude avoir bien emploie</l>
+                <lb n=""/><l facs="#l221">li sachiez fait il quil la</l>
+                <lb n=""/><l facs="#l222">vous envoie tele c&om;me</l>
+                <lb n=""/><l facs="#l223">il vous convient &et; &com;me</l>
+                <lb n=""/><l facs="#l224">cele quil a esprouvee.</l>
+                <lb n=""/><l facs="#l225">ou autrement ne le vous</l>
+                <lb n=""/><l facs="#l226">envoiast il mie &E;t si me</l>
+                <lb n=""/><l facs="#l227">commanda que ie vous</l>
+                <lb n=""/><l facs="#l228">deisse que a preudomme</l>
+                <lb n=""/><l facs="#l229">et apreu &chevalier; doit len en</l>
+                <lb n=""/><l facs="#l230">voier present. </l>
             </div>
         </body>
     </text>

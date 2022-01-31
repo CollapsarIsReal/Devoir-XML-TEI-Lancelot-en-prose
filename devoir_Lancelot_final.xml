@@ -25,9 +25,9 @@
             </editionStmt>
 
             <publicationStmt>
-                <!-- dans notre exemple, le manuscrit est publié par la MRSH de Caen -->
-                <publisher>Edition par la MRSH de Caen</publisher>
-                <pubPlace>Caen</pubPlace>
+                <!-- dans notre exemple, le manuscrit est publié par l'Ecole nationale des Chartes -->
+                <publisher>Edition par l'Ecole nationale des Chartes</publisher>
+                <pubPlace>Paris</pubPlace>
                 <address>
                     <addrLine>Esplanade de la Paix</addrLine>
                     <addrLine>Campus 1</addrLine>

@@ -7,11 +7,11 @@
 <!ENTITY us "<choice><abbr>&#42864;</abbr><expan>us</expan></choice>" >
 <!ENTITY com "<choice><abbr>&#42863;</abbr><expan>com</expan></choice>" >
 
-<!ENTITY bien "<choice><abbr>b&#241;</abbr><expan>bien</expan></choice>" > <!--  bn avec tilde -->
+<!ENTITY bien "<choice><abbr>b&#241;</abbr><expan>bien</expan></choice>" >
 <!ENTITY chevalier "<choice><abbr>chl&#345;</abbr><expan>chevalier</expan></choice>" >
-<!ENTITY par "<choice><abbr>&#xa751;</abbr><expan>par</expan></choice>" > <!--  p barré droit -->
+<!ENTITY par "<choice><abbr>&#xa751;</abbr><expan>par</expan></choice>" >
 <!ENTITY pre "<choice><abbr>&#x1E55;</abbr><expan>pre</expan></choice>" >
-<!ENTITY que "<choice><abbr>&#xA757;</abbr><expan>que</expan></choice>"> <!--  q barré droit -->
+<!ENTITY que "<choice><abbr>&#xA757;</abbr><expan>que</expan></choice>">
 <!ENTITY grant "<choice><abbr>g&#241;t</abbr><expan>grant</expan></choice>" >
 <!ENTITY vostre "<choice><abbr>v&#345;e</abbr><expan>vostre</expan></choice>" >
 <!ENTITY omme "<choice><abbr>c&#333;</abbr><expan>omme</expan></choice>" >
