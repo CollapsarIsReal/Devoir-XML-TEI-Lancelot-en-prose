@@ -99,7 +99,7 @@
                         des indications concernant la présente édition du manuscrit, quant au
                            <gi>sourceDesc</gi>, il offre des renseignements vis à vis du document
                         original sur lequel s'appuie l'encodage.</p>
-                     <div5>
+                     <div5> 
                         <head>Les éléments <hi rend="italic">titleStmt</hi>, <hi rend="italic"
                               >editionStmt</hi>, <hi rend="italic">publicationStmt</hi></head>
                         <p><gi>titleStmt</gi> contient uniquement le titre de l'encodage.
@@ -507,7 +507,7 @@
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">q<hi rend="sup">i</hi></egXML>
                   </div4>
                </div3>
-               <div3>
+               <div3> <!-- J'en suis ici -->
                   <head>Difficultés de transcription</head>
                   <p>Certains passages de la transcription sont incertains : parfois à cause d'une
                      mauvaise lisibilité de la numérisation et parfois car les termes trancrits

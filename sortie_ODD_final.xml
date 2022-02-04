@@ -1,21 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title type="short">oddbyexample</title>
-            <title>ODD by Example customization</title>
-         </titleStmt>
-         <publicationStmt>
-            <p>Unpublished first draft </p>
-         </publicationStmt>
-         <sourceDesc>
-            <p>Derived from <ref target="https://www.tei-c.org/Vault/P5/current/xml/tei/odd/p5subset.xml">base odd</ref> after an analysis of 9 files in file:/C:/Users/USER/Documents/Documents%202021-2022/Cours/XML%20TEI/Devoir/</p>
-         </sourceDesc>
-      </fileDesc>
-   </teiHeader>
+      <teiHeader>
+            <fileDesc>
+                  <titleStmt>
+                     <title>Edition numérique des feuillets 103v et 104r du<hi rend="italic">Lancelot en prose</hi>identifié à la
+                     Bibliothèque Nationale de France comme le manuscrit n°16999</title>
+                  </titleStmt>
+                  <editionStmt>
+                        <edition>Évaluation XML TEI - École nationale des chartes <date>2022</date>
+                        </edition>
+                        <respStmt>
+                              <resp>Transcription du manuscrit et édition en XML TEI</resp>
+                              <persName xml:id="EF">
+                                    <forename>Elsa</forename>
+                                    <surname>Falcoz</surname>
+                              </persName>
+                        </respStmt>
+                  </editionStmt>
+                  
+                  <publicationStmt>
+                        <publisher>Edition par l'Ecole nationale des Chartes</publisher>
+                        <pubPlace>Paris</pubPlace>
+                        <availability status="free">
+                              <p>Dans un cadre de recherche ou d'enseignement</p>
+                        </availability>
+                        <date when-iso="2022-01">Janvier 2022</date>
+                  </publicationStmt>
+                  
+                  <sourceDesc>
+                              <p>Première partie du roman en prose de Lancelot du Lac</p>
+                  </sourceDesc>
+            </fileDesc>
+      </teiHeader>
    <text>
       <body>
+      <div1>
+         <head>Documentation à propos de cette édition numérique du <hi rend="italic">Lancelot en prose</hi>.</head>
+         <p>Cette documentation vise à justifier les choix d'encodage ayant eu lieu tout au long du projet. Cela dans le but
+         que cette édition soit facilement interropérable et réutilisable par qui le souhaite.</p>
+         <p>Cette édition du Lancelot en prose recouvre deux feuillets du manuscrit, le 103 verso et le 104 recto.
+         On y trouvera un fichier XML accompagné de son ODD ainsi qu'un fichier de transformation SXLT qui aidera à la
+         visualisation de la transcription.</p>
+         <p>L'encodage a été pensé dans le but de proposer une édition numérique sous la forme d'un fac-similé interactif afin
+         d'avoir accès à la fois à l'image et à sa transcription. Néanmoins, ne maitrisant pas encore tout à fait les règles d'encodage
+         et d'utilisation des formats XML et autre, il se peut que le résultat obtenu ne soit pas celui excompté...
+         Nous nous excusons par avance des difficultés techniques qui pourraient être rencontrées.</p>
+
+         <div2>
+            <head>Structure du fichier XML</head>
+         <p>Le document XML est contenu dans un élément racine <gi>TEI</gi>, lui même divisé en trois parties: en premier
+         le <gi>teiHeader</gi>, puis un élément <gi>facsimilé</gi> et pour conclure un élément <gi>text</gi>.</p>
+            <p>Le <gi>teiHeader</gi> rassemble les métadonnées à propose du manuscrit dans sa forme originale. Dans l'élement 
+               <gi>editionStmt</gi> et <gi>publicationStmt</gi> on trouvera des informations quant aux personne(s) et instituion(s)
+               responsable du projet. On trouvera également un élément <gi>sourceDesc</gi> qui contient des informations
+               d'identification du manuscrit: lieu de conservation, description matérielle informations sur la composition et 
+               l'architecture du récit, sur les caractéristiques d'écriture et la mise en page. Un dernier élément 
+               <gi>profileDesc</gi> propose un cours index des personnages présents dans l'extrait étudié.</p>
+            <p>L'élément <gi>facsimile</gi> contient toutes les informations relatives aux images et à leur visualisation. Ces données
+               sont accessibles dans des balises <gi>surface</gi> qui référencent le chemin d'accès à l'image, de même que les coordonées
+               des zones correspondantes chacune à une ligne du texte particulière.</p>
+            <p>Pour terminer, l'élément <gi>text</gi> contenant la transcription du manuscrit. L'intégralité de la transcription
+               se trouve dans une balise <gi>body</gi> qui elle même laisse place à une balise <gi>div</gi> avec un 
+               attribut (<att>type</att>) de valeur <val>section</val>, car il s'agit de l'intégralité de la section qui est
+               transcrite ici. Au début de la transcription on trouve une balise (<gi>head</gi>) qui donne le titre du devoir
+               qui avait été donné par l'intervenante chargée du cours. Au début de chaque folio, on trouve une balise <gi>pb</gi>
+               qui pointe vers le chemin de l'image, suivi de l'élément <gi>pb</gi> qui marque le début d'une page. A la suite
+               on trouve l'élément <gi>cb</gi> qui signifie le début d'une colonne, avec son attribut <att>n</att> qui prend
+               comme valeur le <val>numéro de colonne</val>. L'élement <gi>lb</gi> présent en chaque début de ligne souligne les
+               passages à la ligne dont celle suivante est référencée dans le cas d'un rejet (repérable grâce à l'attribut <att>type</att>
+               de valeur <val>rejet</val>.</p>
+            
+            <div3>
+               <head>Structure du <hi rend="italic">teiHeader</hi></head>
+               <p>Le <gi>teiHeader</gi> comporte deux grandes sections:
+               <specList>
+                  <specDesc key="fileDesc"/>
+                  <specDesc key="profileDesc"/>
+               </specList> Le <gi>fileDesc</gi> contient des informations quand au manuscrit en tant que tel, tandis
+               que le <gi>profileDesc</gi> contient notamment un index des personnages présents dans l'extrait. Il n'a 
+                  pas été jugé nécessaire d'ajouter un index de lieux, ces derniers étant très peu présents dans cet extrait.</p>
+               <div4>
+                  <head>Le <hi rend="italic">fileDesc</hi></head>
+                  <p>Le <gi>fileDesc</gi> comprend 4 parties :
+                  <specList>
+                     <specDesc key="titleStmt"/>
+                     <specDesc key="editionStmt"/>
+                     <specDesc key="publicationStmt"/>
+                     <specDesc key="sourceDesc"/>
+                  </specList>
+                  Les informations contenues dans le <gi>titleStmt</gi>, <gi>editionStmt</gi> et <gi>publicationStmt</gi> sont
+                  propres à cette édition numérique, tandis que celles dans le <gi>sourceDesc</gi> sont relatives au manuscrit
+                     dans son intégrité.</p>
+                  <div5>
+                     <head>Les éléments <hi rend="italic">titleStmt</hi>, <hi rend="italic">editionStmt</hi>, <hi rend="italic">publicationStmt</hi></head>
+                     <p><gi>titleStmt</gi> contient un titre bref pour l'édition.</p>
+                     <p><gi>editionStmt</gi> présente le contexte et particularités de l'édition (<gi>edition</gi>) et donne des
+                     informations sur la personne en charge, responsable de l'édition, d'où l'utilisation de la balise <gi>respStmt</gi>.
+                        La balise suivant (<gi>persName</gi>) donne le prénom (<gi>forename</gi>) et le nom (<gi>surname</gi>) du/de la responsable.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <respStmt>
+                           <resp>Transcription du manuscrit et édition en XML TEI</resp>
+                           <persName xml:id="EF">
+                              <forename>Elsa</forename>
+                              <surname>Falcoz</surname>
+                           </persName>
+                        </respStmt>
+                     </egXML>
+                     <p>L'élément <gi>publicationStmt</gi> donne des informations sur la publication et la diffusion du document.
+                        En son sein, l'élément <gi>publisher</gi> renseigne l'institution attachée à l'édition. Les élements <gi>pubplace</gi> et <gi>adress</gi>
+                        qui suivent renseignent respectivement la ville en question où se trouve l'institution ainsi que son adresse.
+                        Le dernier élement <gi>availability</gi> donne le contexte de création de l'édition, les raisons de sa création.
+                        L'attribut <att>type</att> avec sa valeur <val>free</val> renseigne le type de licence qui s'attache au manuscrit.
+                        Un derniet élément <gi>date</gi> donne le mois en cours de sortie de l'édition. La valeur de son attribut <att>when-iso</att> specifie
+                        la norme iso suivie.</p>
+                  </div5>
+                     <div5>
+                        <head>Le <hi rend="italic">sourceDesc</hi></head>
+                        <p>Le <gi>sourceDesc</gi> décrit la source depuis laquelle est issue l'encodage, en l'occurence le 
+                           manuscrit 412 de la Bibliothèque Nationale de France et sa <ref target="https://gallica.bnf.fr/ark:/12148/btv1b6000418r/f218"
+                              >numérisation</ref>.</p>
+                        <p>Dans un second temps, l'élément <gi>msIdentifier</gi> renseigne le pays (<gi>country</gi>) dans lequel est conservé le 
+                           manuscrit en donnant également la ville (<gi>settelement</gi>) et l'institution en charge de la conservation (<gi>institution</gi>)
+                           ainsi que le département (dans le sens institutionnel) en question (<gi>repository</gi>). Viennent ensuite dans une ou plusieurs éléments
+                           <gi>altIdentifier</gi> les uns à la suite des autres l'historique d'identification du manuscrit dont la balise <gi>idno</gi> peut
+                           renseigner tout aussi bien une appellation en texte qu'un lien ark.</p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <altIdentifier>
+                              <idno> Séguier-Coislin. — Saint-Germain français 117 (Ancienne
+                                 cote)</idno>
+                           </altIdentifier>
+                           <altIdentifier>
+                              <idno>ark:/12148/btv1b6000418r</idno>
+                           </altIdentifier>
+                        </egXML>
+                        <p>L'élément <gi>head</gi> donne le titre de l'ouvrage de la <ref target="https://gallica.bnf.fr/ark:/12148/btv1b6000418r/f218.item">numérisation</ref> 
+                           que l'on peut trouver sur le site de la Bibliothèque Nationale de France. Il référence aussi sa date de publication (<gi>origiDate</gi>) 
+                        qui porte une fourchette temporelle (<att>notBefore</att> et <att>notAfter</att>).</p>
+                        <p>Les renseignements sur le déroulé, la structure du manuscrit se trouvent dans l'élément <gi>msContents</gi> qui comporte trois sous parties.
+                           Le <gi>summary</gi> renseigne sur la composition des feuillets, le <gi>textLang</gi> sur la langue principale (<att>mainLang</att>) de narration
+                           ainsi que sur les langues secondaires présentes (<att>otherLangs</att>). Pour finir on trouve l'élément <gi>msItem</gi> qui renseigne
+                           plusieurs choses: l'<gi>incipit</gi> et l'<gi>explicit</gi> correspondant à chaque section. Normalement, il devrait y avoir autant d'incipit et d'explicit
+                           que de parties à l'oeuvre traitée: ici notre manuscrit ne comporte qu'une section distincte, et donc un seul début et fin. 
+                           textLang
+                           msItem
+                           author
+                           title
+                           incipit
+                           explicit
+                           filiation
+                           note</p>
+                     </div5>
+               </div4>
+            </div3>
+            
+         </div2>
+      </div1>
          <schemaSpec ident="oddbyexample" start="TEI ">
             <moduleRef key="tei"/>
             <!--Checking module textcrit-->
@@ -1128,6 +1267,7 @@
             <elementSpec ident="lb" mode="change">
                <attList>
                   <attDef ident="next" mode="delete"/>
+                  <attDef ident="facs" mode="delete"/>
                   <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="change">
                      <valList mode="add" type="closed">
@@ -1535,21 +1675,6 @@
             </classSpec>
             <!--Checking module linking-->
             <classRef key="att.global.linking"/>
-            <moduleRef key="linking" include="ab"/>
-            <elementSpec ident="ab" mode="change">
-               <attList>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="type" mode="delete"/>
-                  <attDef ident="part" mode="change">
-                     <valList mode="add" type="closed">
-                        <valItem ident="N"/>
-                     </valList>
-                  </attDef>
-               </attList>
-            </elementSpec>
             <classSpec ident="att.global.linking" type="atts" mode="change">
                <attList>
                   <attDef ident="synch" mode="delete"/>

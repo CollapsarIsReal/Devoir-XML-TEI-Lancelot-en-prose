@@ -78,9 +78,9 @@
                                 face ; au quint jour en droit prime chevauchoit vers une forest, si
                                 avoit osté son hiau[me pour le chault qui jà estoit encommancé...].» </explicit>
                             <filiation>Lancelot du Lac</filiation>
-                            <note>Auteurs potentiels: <p>Chrétien de Troyes
-                                    <date>113.-1185?</date></p>
-                                <p>Walter Map <date>1140?-1209?</date></p>
+                            <note>Auteurs potentiels: <persName>Chrétien de Troyes
+                                    <date>113.-1185?</date></persName>
+                                <persName>Walter Map <date>1140?-1209?</date></persName>
                             </note>
                             <textLang mainLang="fr"/>
                             <respStmt>
@@ -558,24 +558,19 @@
     </facsimile>
     <text type="edition">
         <body>
-            <div type="section" corresp="#Lancelot_prose">
                 <head>Lancelot en prose, Chapitres 056/057 : Quête de Gauvain et situation
                     d’Hector</head>
-                <milestone unit="surface"
-                    facs="https://gallica.bnf.fr/ark:/12148/btv1b6000418r/f218.item" xml:id="s103v"/>
+                <milestone unit="surface" xml:id="s103v"/>
                 <pb facs="https://gallica.bnf.fr/ark:/12148/btv1b6000418r/f218.item" n="103v"
                     xml:id="f103v"/>
 
+            <ab>
                 <cb n="1"/>
-                <lb n="1"/>
-                <l facs="#l1"><hi rend="initiale color(blue) size(2lines) sizeAct(7lines)">L</hi>ors
-                    commence la</l>
-                <lb n="2"/>
-                <l facs="#l2"><persName ref="#Guenievre">royne</persName> apenser et</l>
-                <lb n="3"/>
-                <l facs="#l3">puis demande au &chevalier;</l>
-                <lb n="4"/>
-                <l facs="#l4">qui cil estoit qui li m&an;</l>
+                <lb facs="#l1"/><hi rend="initiale color(blue) size(2lines) sizeAct(7lines)">L</hi>ors commence la
+                <lb facs="#l2"/><persName ref="#Guenievre">royne</persName> apenser et
+                <lb facs="#l3"/>puis demande au &chevalier;
+                <lb facs="#l4"/>qui cil estoit qui li m&an;
+            </ab>
 
                 <cb n="2"/>
                 <lb xml:id="n5" n="5"/>
@@ -784,8 +779,7 @@
                 <lb n="104"/>
                 <l facs="#l104">la pucele li dist. &D;ame</l>
 
-                <milestone unit="surface"
-                    facs="https://gallica.bnf.fr/ark:/12148/btv1b6000418r/f219.item" xml:id="s104r"/>
+                <milestone unit="surface" xml:id="s104r"/>
                 <pb facs="https://gallica.bnf.fr/ark:/12148/btv1b6000418r/f219.item" n="104r"
                     xml:id="f104r"/>
 
@@ -1052,7 +1046,6 @@
                 <l facs="#l229">et apreu &chevalier; doit len en</l>
                 <lb xml:id="n230" n="230"/>
                 <l facs="#l230">voier present.</l>
-            </div>
         </body>
     </text>
 </TEI>
