@@ -5,7 +5,7 @@
 
 <!DOCTYPE TEI SYSTEM "Lancelot_DTD.dtd">
 
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en" >
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -190,7 +190,7 @@
                               <item><val>m</val> pour monographie, c'est-à-dire pour le volume dans
                                  son intégralité ;</item>
                            </list>
-                           Chaque ouvrage doit également obligatoirement présenter un <att>xml:id</att> dans le but de pouvoir lier les 
+                           Chaque ouvrage présente un <att>xml:id</att> dans le but de pouvoir lier les 
                            ouvrages plus facilement entre eux. La valeur <val>ISBN</val> de l'attribut <att>type</att> doit être le plus
                            possible renseigné afin de pouvoir identifier l'ouvrage rapidement.</p>
                      </div5>
@@ -1280,11 +1280,12 @@
                   <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
-            <elementSpec ident="unclear" mode="change">
+            <elementSpec ident="unclear" mode="change"> <!-- MODIFICATIONS -->
                <attList>
                   <attDef ident="reason" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="illegible"/>
+                        <valItem ident="faded"/>
                      </valList>
                   </attDef>
                   <attDef ident="agent" mode="delete"/>
@@ -1447,7 +1448,14 @@
                   </attDef>
                </attList>
             </elementSpec>
-            <elementSpec ident="cb" mode="change">
+            <elementSpec ident="cb" mode="change"> <!-- MODIFICATIONS -->
+               <!-- <constraintSpec ident="nVal" scheme="schematron">
+                  <constraint>
+                     <s:rule context="number(cb/@n)">
+                        <s:assert test="number(@n) = number(preceding-sibling::ab/cb[1]/@n) + 1">Le nombre attribué à une colonne
+                        doit être supérieure à la colonne précédente</s:assert>
+                     </s:rule>
+                  </constraint> -->
                <attList>
                   <attDef ident="corresp" mode="delete"/>
                   <attDef ident="next" mode="delete"/>
@@ -1557,7 +1565,12 @@
                         <valItem ident="false"/>
                      </valList>
                   </attDef>
-                  <attDef ident="type" mode="delete"/>
+                  <attDef ident="type" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="a"/>
+                        <valItem ident="m"/>
+                     </valList>
+                  </attDef>
                   <attDef ident="status" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="draft"/>
@@ -1630,8 +1643,7 @@
             </elementSpec>
             <!--Checking module figures-->
             <!--Checking module header-->
-            <moduleRef key="header"
-                       include="teiHeader fileDesc titleStmt editionStmt edition extent publicationStmt idno availability licence sourceDesc profileDesc handNote scriptNote"/>
+            
             <elementSpec ident="teiHeader" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>

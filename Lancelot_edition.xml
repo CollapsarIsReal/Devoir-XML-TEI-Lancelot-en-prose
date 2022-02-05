@@ -3,7 +3,7 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
-<!DOCTYPE TEI SYSTEM "DTD_devoir.dtd">
+<!DOCTYPE TEI SYSTEM "Lancelot_DTD.dtd">
 
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
@@ -758,8 +758,8 @@
             <lb facs="#l179" n="179" type="rejet" corresp="#n180"/>diex qui si pres le ma a
             <lb facs="#l180" xml:id="n180" n="180"/>menee. &L;ors la dist da
             <lb facs="#l181" n="181"/>me li &chevalier;s qui &vostre;
-            <lb facs="#l182" n="182"/>bataille fist contre
-            <lb facs="#l183" n="183"/><persName ref="Segurades">&S;e<lb n=""/><lb/>gurade</persName> vous mande
+            <lb facs="#l182" n="182"/>bataille fist contre <persName ref="Segurades">&S;e
+            <lb facs="#l183" n="183"/>gurade</persName> vous mande 
             <lb facs="#l184" n="184"/>que sil venoit en point
             <lb facs="#l185" n="185"/>de &vostre; besoing et il
             <lb facs="#l186" n="186"/>vous oubliaoit autresi
