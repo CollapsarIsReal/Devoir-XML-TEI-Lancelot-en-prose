@@ -5,7 +5,9 @@
 
 <!DOCTYPE TEI SYSTEM "Lancelot_DTD.dtd">
 
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
+   xmlns:s="http://purl.oclc.org/dsdl/schematon">
+   
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -190,7 +192,7 @@
                               <item><val>m</val> pour monographie, c'est-à-dire pour le volume dans
                                  son intégralité ;</item>
                            </list>
-                           Chaque ouvrage doit également obligatoirement présenter un <att>xml:id</att> dans le but de pouvoir lier les 
+                           Chaque ouvrage présente un <att>xml:id</att> dans le but de pouvoir lier les 
                            ouvrages plus facilement entre eux. La valeur <val>ISBN</val> de l'attribut <att>type</att> doit être le plus
                            possible renseigné afin de pouvoir identifier l'ouvrage rapidement.</p>
                      </div5>
@@ -327,7 +329,80 @@
           </div1>
          <div1>
             <head>Explication des différents modules utilisés</head>
-            <schemaSpec ident="oddbyexample" start="TEI ">
+            
+         <schemaSpec ident="oddbyexample" start="TEI ">
+            
+            <!-- MODIFICATIONS DES MODULES -->
+            <!-- Première modification -->
+            <elementSpec ident="hi" mode="change">
+               <gloss>Identification des lettrines</gloss>
+               <desc>Information pour l'encodage des détails des lettrines du texte.</desc>
+               <attList>
+                  <attDef ident="corresp" mode="delete"/>
+                  <attDef ident="facs" mode="delete"/>
+                  <!-- l'attribut rend doit être renseigné -->
+                  <attDef ident="rend" mode="change" usage="req"/>
+               </attList>
+            </elementSpec>
+            
+            <!-- Deuxième modification -->
+            <elementSpec ident="unclear" mode="change">
+               <gloss>Attribut dommage ou illisible</gloss>
+               <desc>Ajout de la différenciation entre des mots non transcrits
+                  pour cause de dommage matériels ou de problèmes de lecture.</desc>
+               <attList>
+                  <attDef ident="reason" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="faded"/> <!-- modif -->
+                        <valItem ident="illegible"/>
+                     </valList>
+                  </attDef>
+                  <attDef ident="agent" mode="delete"/>
+                  <attDef ident="corresp" mode="delete"/>
+                  <attDef ident="facs" mode="delete"/>
+                  <attDef ident="unit" mode="delete"/>
+               </attList>
+            </elementSpec>
+            
+            <!-- Troisième modification -->
+            <elementSpec ident="bibl" mode="change">
+               <gloss>Contrainte d'attributs de bibl</gloss>
+               <desc>L'attribut "a" fait référence à des articles, tandis que le "m"
+                  est réservé aux volumes dans leur intégralité</desc>
+               <attList>
+                  <attDef ident="facs" mode="delete"/>
+                  <attDef ident="default" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="false"/>
+                     </valList>
+                  </attDef>
+                  <attDef ident="type" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="a"/> <!-- modif -->
+                        <valItem ident="m"/> <!-- modif -->
+                     </valList>
+                  </attDef>
+                  <attDef ident="status" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="draft"/>
+                     </valList>
+                  </attDef>
+               </attList>
+            </elementSpec>
+            
+            <!-- Quatrième modification est un échec. Il faudrait contraindre l'attribut @n de l'élément afin que celui
+            ci prennent +1 par rapport au précédent, quand ils sont dans un même élément <ab>. En gros pour bien numéroter
+            les colonnes. -->
+            <elementSpec ident="cb" mode="change">   
+               <attList>
+                  <attDef ident="corresp" mode="delete"/>
+                  <attDef ident="facs" mode="delete"/>
+                  <attDef ident="type" mode="delete"/>
+               </attList>
+            </elementSpec>
+            
+            <!-- FIN DES MODULES AVEC MODIFICATIONS -->
+            
             <moduleRef key="tei"/>
             <!--Checking module textcrit-->
             <classRef key="att.textCritical"/>
@@ -344,13 +419,11 @@
             <!--Checking module msdescription-->
             <classRef key="model.physDescPart"/>
             <moduleRef key="msdescription"
-                       include="msDesc height width locus origDate msIdentifier institution repository collection altIdentifier msName explicit filiation incipit msContents msItem summary physDesc objectDesc supportDesc support foliation layoutDesc layout handDesc scriptDesc decoDesc decoNote bindingDesc binding sealDesc history origin provenance"/>
+                       include="msDesc height width locus origDate msIdentifier institution repository altIdentifier explicit filiation incipit msContents msItem summary physDesc objectDesc supportDesc support foliation layoutDesc layout handDesc decoDesc decoNote bindingDesc binding sealDesc history origin provenance"/>
             <elementSpec ident="msDesc" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                   <attDef ident="status" mode="change">
                      <valList mode="add" type="closed">
@@ -362,9 +435,7 @@
             <elementSpec ident="height" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="unit" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="410mm"/>
@@ -375,9 +446,7 @@
             <elementSpec ident="width" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="unit" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="300mm"/>
@@ -388,9 +457,7 @@
             <elementSpec ident="locus" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="target" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
@@ -398,9 +465,7 @@
             <elementSpec ident="origDate" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="when-iso" mode="delete"/>
                   <attDef ident="unit" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
@@ -409,159 +474,108 @@
             <elementSpec ident="msIdentifier" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="institution" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="ref" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="repository" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="ref" mode="delete"/>
-               </attList>
-            </elementSpec>
-            <elementSpec ident="collection" mode="change">
-               <attList>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="ref" mode="delete"/>
-                  <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="altIdentifier" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                   <attDef ident="notBefore" mode="delete"/>
                   <attDef ident="notAfter" mode="delete"/>
                   <attDef ident="when-iso" mode="delete"/>
                </attList>
             </elementSpec>
-            <elementSpec ident="msName" mode="change">
-               <attList>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="type" mode="delete"/>
-               </attList>
-            </elementSpec>
             <elementSpec ident="explicit" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="filiation" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="incipit" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="msContents" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="msItem" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="summary" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="physDesc" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="objectDesc" mode="change">
                <attList>
                   <attDef ident="form" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="supportDesc" mode="change">
                <attList>
                   <attDef ident="material" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="support" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="foliation" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="layoutDesc" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="layout" mode="change">
@@ -569,41 +583,25 @@
                   <attDef ident="streams" mode="delete"/>
                   <attDef ident="ruledLines" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="handDesc" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-               </attList>
-            </elementSpec>
-            <elementSpec ident="scriptDesc" mode="change">
-               <attList>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="decoDesc" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="decoNote" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="contreplats"/>
@@ -617,18 +615,14 @@
             <elementSpec ident="bindingDesc" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="binding" mode="change">
                <attList>
                   <attDef ident="contemporary" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="notBefore" mode="delete"/>
                   <attDef ident="notAfter" mode="delete"/>
                   <attDef ident="when-iso" mode="delete"/>
@@ -637,25 +631,19 @@
             <elementSpec ident="sealDesc" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="history" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="origin" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="notBefore" mode="delete"/>
                   <attDef ident="notAfter" mode="delete"/>
                   <attDef ident="when-iso" mode="delete"/>
@@ -664,9 +652,7 @@
             <elementSpec ident="provenance" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="notBefore" mode="delete"/>
                   <attDef ident="notAfter" mode="delete"/>
                   <attDef ident="when-iso" mode="delete"/>
@@ -682,7 +668,6 @@
                <attList>
                   <attDef ident="corresp" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="notBefore" mode="delete"/>
                   <attDef ident="notAfter" mode="delete"/>
                   <attDef ident="when-iso" mode="delete"/>
@@ -697,9 +682,7 @@
             <elementSpec ident="surname" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="full" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="yes"/>
@@ -712,9 +695,7 @@
             <elementSpec ident="forename" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="full" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="yes"/>
@@ -730,9 +711,7 @@
                   <attDef ident="notAfter" mode="delete"/>
                   <attDef ident="when-iso" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="full" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="yes"/>
@@ -744,9 +723,7 @@
             <elementSpec ident="country" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="ref" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                   <attDef ident="notBefore" mode="delete"/>
@@ -757,9 +734,7 @@
             <elementSpec ident="settlement" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="ref" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                   <attDef ident="notBefore" mode="delete"/>
@@ -770,9 +745,7 @@
             <elementSpec ident="listPerson" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                   <attDef ident="default" mode="change">
                      <valList mode="add" type="closed">
@@ -787,9 +760,7 @@
                   <attDef ident="sex" mode="delete"/>
                   <attDef ident="age" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <classSpec ident="att.datable.iso" type="atts" mode="change">
@@ -821,51 +792,50 @@
             <!--Checking module tagdocs-->
             <classRef key="att.combinable"/>
             <classRef key="att.identified"/>
+            <classRef key="att.namespaceable"/>
             <classRef key="att.repeatable"/>
             <classRef key="model.contentPart"/>
             <moduleRef key="tagdocs"
-                       include="att gi val specList specDesc classRef elementRef moduleRef schemaSpec elementSpec classSpec content sequence alternate constraint constraintSpec attList attDef datatype valItem valList textNode"/>
+                       include="att gi val specList specDesc classRef elementRef moduleRef schemaSpec elementSpec classSpec content sequence attList attDef valItem valList"/>
             <elementSpec ident="att" mode="change">
                <attList>
-                  <attDef ident="scheme" mode="delete"/>
+                  <attDef ident="scheme" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="TEI"/>
+                     </valList>
+                  </attDef>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="gi" mode="change">
                <attList>
-                  <attDef ident="scheme" mode="delete"/>
+                  <attDef ident="scheme" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="TEI"/>
+                     </valList>
+                  </attDef>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="val" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="specList" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="specDesc" mode="change">
                <attList>
                   <attDef ident="atts" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="classRef" mode="change">
@@ -874,19 +844,13 @@
                   <attDef ident="include" mode="delete"/>
                   <attDef ident="except" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="minOccurs" mode="delete"/>
-                  <attDef ident="maxOccurs" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="elementRef" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="moduleRef" mode="change">
@@ -895,9 +859,7 @@
                   <attDef ident="except" mode="delete"/>
                   <attDef ident="url" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="schemaSpec" mode="change">
@@ -905,22 +867,25 @@
                   <attDef ident="prefix" mode="delete"/>
                   <attDef ident="targetLang" mode="delete"/>
                   <attDef ident="docLang" mode="delete"/>
-                  <attDef ident="defaultExceptions" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="mode" mode="delete"/>
-                  <attDef ident="status" mode="delete"/>
+                  <attDef ident="mode" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="add"/>
+                     </valList>
+                  </attDef>
+                  <attDef ident="status" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="draft"/>
+                     </valList>
+                  </attDef>
                </attList>
             </elementSpec>
             <elementSpec ident="elementSpec" mode="change">
                <attList>
                   <attDef ident="prefix" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="mode" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="change"/>
@@ -937,9 +902,7 @@
                   </attDef>
                   <attDef ident="generate" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="mode" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="change"/>
@@ -954,76 +917,42 @@
             </elementSpec>
             <elementSpec ident="content" mode="change">
                <attList>
-                  <attDef ident="autoPrefix" mode="delete"/>
+                  <attDef ident="autoPrefix" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="true"/>
+                     </valList>
+                  </attDef>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="sequence" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="minOccurs" mode="delete"/>
-                  <attDef ident="maxOccurs" mode="delete"/>
-               </attList>
-            </elementSpec>
-            <elementSpec ident="alternate" mode="change">
-               <attList>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-               </attList>
-            </elementSpec>
-            <elementSpec ident="constraint" mode="change">
-               <attList>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-               </attList>
-            </elementSpec>
-            <elementSpec ident="constraintSpec" mode="change">
-               <attList>
-                  <attDef ident="scheme" mode="change">
-                     <valList mode="add" type="closed">
-                        <valItem ident="schematron"/>
-                     </valList>
-                  </attDef>
-                  <attDef ident="type" mode="delete"/>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="mode" mode="delete"/>
-                  <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="attList" mode="change">
                <attList>
-                  <attDef ident="org" mode="delete"/>
+                  <attDef ident="org" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="group"/>
+                     </valList>
+                  </attDef>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="attDef" mode="change">
                <attList>
                   <attDef ident="usage" mode="change">
                      <valList mode="add" type="closed">
-                        <valItem ident="req"/>
+                        <valItem ident="opt"/>
                      </valList>
                   </attDef>
                   <attDef ident="ns" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="mode" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="change"/>
@@ -1032,35 +961,10 @@
                   </attDef>
                </attList>
             </elementSpec>
-            <elementSpec ident="datatype" mode="change">
-               <attList>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-               </attList>
-            </elementSpec>
             <elementSpec ident="valItem" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="mode" mode="delete"/>
-               </attList>
-            </elementSpec>
-            <elementSpec ident="valList" mode="change">
-               <attList>
-                  <attDef ident="type" mode="change">
-                     <valList mode="add" type="closed">
-                        <valItem ident="closed"/>
-                        <valItem ident="open"/>
-                     </valList>
-                  </attDef>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="mode" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="add"/>
@@ -1068,17 +972,24 @@
                   </attDef>
                </attList>
             </elementSpec>
-            <elementSpec ident="textNode" mode="change">
+            <elementSpec ident="valList" mode="change">
                <attList>
+                  <attDef ident="type" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="closed"/>
+                     </valList>
+                  </attDef>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
+                  <attDef ident="mode" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="add"/>
+                     </valList>
+                  </attDef>
                </attList>
             </elementSpec>
             <classSpec ident="att.identified" type="atts" mode="change">
                <attList>
-                  <attDef ident="predeclare" mode="delete"/>
                   <attDef ident="module" mode="delete"/>
                </attList>
             </classSpec>
@@ -1122,11 +1033,6 @@
                <attList>
                   <attDef ident="calendar" mode="delete"/>
                   <attDef ident="period" mode="delete"/>
-               </attList>
-            </classSpec>
-            <classSpec ident="att.global.responsibility" type="atts" mode="change">
-               <attList>
-                  <attDef ident="cert" mode="delete"/>
                </attList>
             </classSpec>
             <classSpec ident="att.editLike" type="atts" mode="change">
@@ -1213,13 +1119,11 @@
             <!--Checking module core-->
             <classRef key="att.milestoneUnit"/>
             <moduleRef key="core"
-                       include="p hi desc gloss choice reg orig unclear name address addrLine date abbr expan ref list item head note graphic milestone pb lb cb author respStmt resp title publisher biblScope pubPlace bibl listBibl l lg textLang"/>
+                       include="p hi desc gloss choice reg orig unclear name address addrLine date abbr expan ref list item head note graphic milestone pb lb cb author respStmt resp title publisher biblScope pubPlace bibl listBibl textLang"/>
             <elementSpec ident="p" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="part" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="N"/>
@@ -1227,30 +1131,18 @@
                   </attDef>
                </attList>
             </elementSpec>
-            <elementSpec ident="hi" mode="change">
-               <attList>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-               </attList>
-            </elementSpec>
             <elementSpec ident="desc" mode="change">
                <attList>
                   <attDef ident="type" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="gloss" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                   <attDef ident="target" mode="delete"/>
                </attList>
@@ -1258,49 +1150,26 @@
             <elementSpec ident="choice" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="reg" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="orig" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-               </attList>
-            </elementSpec>
-            <elementSpec ident="unclear" mode="change">
-               <attList>
-                  <attDef ident="reason" mode="change">
-                     <valList mode="add" type="closed">
-                        <valItem ident="illegible"/>
-                     </valList>
-                  </attDef>
-                  <attDef ident="agent" mode="delete"/>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="unit" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="name" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="full" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="yes"/>
@@ -1316,25 +1185,19 @@
             <elementSpec ident="address" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="addrLine" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="date" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="ref" mode="delete"/>
                   <attDef ident="notBefore" mode="delete"/>
                   <attDef ident="notAfter" mode="delete"/>
@@ -1346,26 +1209,20 @@
                <attList>
                   <attDef ident="type" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="expan" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="ref" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
@@ -1373,35 +1230,27 @@
                <attList>
                   <attDef ident="type" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="item" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="head" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="note" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="target" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
@@ -1409,19 +1258,15 @@
             <elementSpec ident="graphic" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="milestone" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
+                  <attDef ident="facs" mode="delete"/>
                   <attDef ident="unit" mode="change">
                      <valList mode="add" type="closed">
-                        <valItem ident="section"/>
                         <valItem ident="surface"/>
                      </valList>
                   </attDef>
@@ -1431,15 +1276,11 @@
             <elementSpec ident="pb" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="lb" mode="change">
                <attList>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="rejet"/>
@@ -1447,21 +1288,10 @@
                   </attDef>
                </attList>
             </elementSpec>
-            <elementSpec ident="cb" mode="change">
-               <attList>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="type" mode="delete"/>
-               </attList>
-            </elementSpec>
             <elementSpec ident="author" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="ref" mode="delete"/>
                   <attDef ident="notBefore" mode="delete"/>
                   <attDef ident="notAfter" mode="delete"/>
@@ -1471,18 +1301,14 @@
             <elementSpec ident="respStmt" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="ref" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="resp" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="ref" mode="delete"/>
                   <attDef ident="notBefore" mode="delete"/>
                   <attDef ident="notAfter" mode="delete"/>
@@ -1496,18 +1322,14 @@
                      <valList mode="add" type="closed">
                         <valItem ident="a"/>
                         <valItem ident="m"/>
-                        <valItem ident="short"/>
                      </valList>
                   </attDef>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="a"/>
                         <valItem ident="m"/>
-                        <valItem ident="short"/>
                      </valList>
                   </attDef>
                   <attDef ident="ref" mode="delete"/>
@@ -1519,18 +1341,14 @@
             <elementSpec ident="publisher" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="ref" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="biblScope" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="unit" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="page"/>
@@ -1541,36 +1359,14 @@
             <elementSpec ident="pubPlace" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="ref" mode="delete"/>
-               </attList>
-            </elementSpec>
-            <elementSpec ident="bibl" mode="change">
-               <attList>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="default" mode="change">
-                     <valList mode="add" type="closed">
-                        <valItem ident="false"/>
-                     </valList>
-                  </attDef>
-                  <attDef ident="type" mode="delete"/>
-                  <attDef ident="status" mode="change">
-                     <valList mode="add" type="closed">
-                        <valItem ident="draft"/>
-                     </valList>
-                  </attDef>
                </attList>
             </elementSpec>
             <elementSpec ident="listBibl" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="default" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="false"/>
@@ -1579,113 +1375,56 @@
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
-            <elementSpec ident="l" mode="change">
-               <attList>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="part" mode="change">
-                     <valList mode="add" type="closed">
-                        <valItem ident="N"/>
-                     </valList>
-                  </attDef>
-               </attList>
-            </elementSpec>
-            <elementSpec ident="lg" mode="change">
-               <attList>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="org" mode="change">
-                     <valList mode="add" type="closed">
-                        <valItem ident="uniform"/>
-                     </valList>
-                  </attDef>
-                  <attDef ident="sample" mode="change">
-                     <valList mode="add" type="closed">
-                        <valItem ident="complete"/>
-                     </valList>
-                  </attDef>
-                  <attDef ident="part" mode="change">
-                     <valList mode="add" type="closed">
-                        <valItem ident="N"/>
-                     </valList>
-                  </attDef>
-                  <attDef ident="type" mode="change">
-                     <valList mode="add" type="closed">
-                        <valItem ident="colonne"/>
-                        <valItem ident="partie"/>
-                     </valList>
-                  </attDef>
-               </attList>
-            </elementSpec>
             <elementSpec ident="textLang" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <!--Checking module figures-->
             <!--Checking module header-->
             <moduleRef key="header"
-                       include="teiHeader fileDesc titleStmt editionStmt edition extent publicationStmt idno availability licence sourceDesc profileDesc handNote scriptNote"/>
+                       include="teiHeader fileDesc titleStmt editionStmt edition extent publicationStmt idno availability sourceDesc profileDesc handNote"/>
             <elementSpec ident="teiHeader" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="fileDesc" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="titleStmt" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="editionStmt" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="edition" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="extent" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="publicationStmt" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="idno" mode="change">
@@ -1696,9 +1435,7 @@
                      </valList>
                   </attDef>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="notBefore" mode="delete"/>
                   <attDef ident="notAfter" mode="delete"/>
                   <attDef ident="when-iso" mode="delete"/>
@@ -1717,9 +1454,7 @@
                      </valList>
                   </attDef>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="default" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="false"/>
@@ -1727,23 +1462,10 @@
                   </attDef>
                </attList>
             </elementSpec>
-            <elementSpec ident="licence" mode="change">
-               <attList>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="notBefore" mode="delete"/>
-                  <attDef ident="notAfter" mode="delete"/>
-                  <attDef ident="when-iso" mode="delete"/>
-               </attList>
-            </elementSpec>
             <elementSpec ident="sourceDesc" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="default" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="false"/>
@@ -1754,26 +1476,13 @@
             <elementSpec ident="profileDesc" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="handNote" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-               </attList>
-            </elementSpec>
-            <elementSpec ident="scriptNote" mode="change">
-               <attList>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="scribeRef" mode="delete"/>
                </attList>
             </elementSpec>
             <!--Checking module gaiji-->
@@ -1785,9 +1494,7 @@
             <elementSpec ident="facsimile" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="surface" mode="change">
@@ -1795,9 +1502,7 @@
                   <attDef ident="attachment" mode="delete"/>
                   <attDef ident="flipping" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="ulx" mode="delete"/>
                   <attDef ident="uly" mode="delete"/>
                   <attDef ident="lrx" mode="delete"/>
@@ -1813,18 +1518,14 @@
             <elementSpec ident="zone" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="damage" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                   <attDef ident="unit" mode="delete"/>
                </attList>
@@ -1832,9 +1533,7 @@
             <elementSpec ident="ex" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="unit" mode="delete"/>
                </attList>
             </elementSpec>
@@ -1850,9 +1549,7 @@
             <elementSpec ident="ab" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                   <attDef ident="part" mode="change">
                      <valList mode="add" type="closed">
@@ -1866,6 +1563,7 @@
                   <attDef ident="synch" mode="delete"/>
                   <attDef ident="sameAs" mode="delete"/>
                   <attDef ident="copyOf" mode="delete"/>
+                  <attDef ident="next" mode="delete"/>
                   <attDef ident="prev" mode="delete"/>
                   <attDef ident="exclude" mode="delete"/>
                   <attDef ident="select" mode="delete"/>
@@ -1883,24 +1581,19 @@
                </attList>
             </classSpec>
             <!--Checking module textstructure-->
-            <moduleRef key="textstructure"
-                       include="TEI text body div div1 div2 div3 div4 div5"/>
+            <moduleRef key="textstructure" include="TEI text body div1 div2 div3 div4 div5"/>
             <elementSpec ident="TEI" mode="change">
                <attList>
                   <attDef ident="version" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="text" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="type" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="edition"/>
@@ -1911,16 +1604,13 @@
             <elementSpec ident="body" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                </attList>
             </elementSpec>
-            <elementSpec ident="div" mode="change">
+            <elementSpec ident="div1" mode="change">
                <attList>
-                  <attDef ident="next" mode="delete"/>
+                  <attDef ident="corresp" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="org" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="uniform"/>
@@ -1936,70 +1626,94 @@
                         <valItem ident="N"/>
                      </valList>
                   </attDef>
-                  <attDef ident="type" mode="change">
-                     <valList mode="add" type="closed">
-                        <valItem ident="section"/>
-                     </valList>
-                  </attDef>
-               </attList>
-            </elementSpec>
-            <elementSpec ident="div1" mode="change">
-               <attList>
-                  <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
-                  <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="org" mode="delete"/>
-                  <attDef ident="sample" mode="delete"/>
-                  <attDef ident="part" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="div2" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="org" mode="delete"/>
-                  <attDef ident="sample" mode="delete"/>
-                  <attDef ident="part" mode="delete"/>
+                  <attDef ident="org" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="uniform"/>
+                     </valList>
+                  </attDef>
+                  <attDef ident="sample" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="complete"/>
+                     </valList>
+                  </attDef>
+                  <attDef ident="part" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="N"/>
+                     </valList>
+                  </attDef>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="div3" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="org" mode="delete"/>
-                  <attDef ident="sample" mode="delete"/>
-                  <attDef ident="part" mode="delete"/>
+                  <attDef ident="org" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="uniform"/>
+                     </valList>
+                  </attDef>
+                  <attDef ident="sample" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="complete"/>
+                     </valList>
+                  </attDef>
+                  <attDef ident="part" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="N"/>
+                     </valList>
+                  </attDef>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="div4" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="org" mode="delete"/>
-                  <attDef ident="sample" mode="delete"/>
-                  <attDef ident="part" mode="delete"/>
+                  <attDef ident="org" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="uniform"/>
+                     </valList>
+                  </attDef>
+                  <attDef ident="sample" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="complete"/>
+                     </valList>
+                  </attDef>
+                  <attDef ident="part" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="N"/>
+                     </valList>
+                  </attDef>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
             <elementSpec ident="div5" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
-                  <attDef ident="org" mode="delete"/>
-                  <attDef ident="sample" mode="delete"/>
-                  <attDef ident="part" mode="delete"/>
+                  <attDef ident="org" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="uniform"/>
+                     </valList>
+                  </attDef>
+                  <attDef ident="sample" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="complete"/>
+                     </valList>
+                  </attDef>
+                  <attDef ident="part" mode="change">
+                     <valList mode="add" type="closed">
+                        <valItem ident="N"/>
+                     </valList>
+                  </attDef>
                   <attDef ident="type" mode="delete"/>
                </attList>
             </elementSpec>
@@ -2008,9 +1722,7 @@
             <elementSpec ident="particDesc" mode="change">
                <attList>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
-                  <attDef ident="resp" mode="delete"/>
                   <attDef ident="default" mode="change">
                      <valList mode="add" type="closed">
                         <valItem ident="false"/>
@@ -2031,8 +1743,8 @@
                   </attDef>
                   <attDef ident="assertedValue" mode="delete"/>
                   <attDef ident="given" mode="delete"/>
+                  <attDef ident="degree" mode="delete"/>
                   <attDef ident="corresp" mode="delete"/>
-                  <attDef ident="next" mode="delete"/>
                   <attDef ident="facs" mode="delete"/>
                   <attDef ident="type" mode="delete"/>
                </attList>
