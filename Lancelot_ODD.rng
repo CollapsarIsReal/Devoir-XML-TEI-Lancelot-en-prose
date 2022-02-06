@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2022-02-05T19:05:10Z. .
+Schema generated from ODD source 2022-02-06T17:36:11Z. .
 TEI Edition: Version 4.3.0. Last updated on
         31st August 2021, revision b4f72b1ff
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.3.0/
@@ -92,7 +92,7 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.3.0/
             </choice>
          </zeroOrMore>
       </element>
-      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e25725-constraint">
+      <pattern xmlns="http://purl.oclc.org/dsdl/schematron" id="d9e25745-constraint">
          <rule context="tei:content">
             <report test="descendant::*[not(namespace-uri(.) =               ('http://relaxng.org/ns/compatibility/annotations/1.0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'http://relaxng.org/ns/structure/1.0', 'http://www.tei-c.org/ns/1.0'))]">content descendants must be in the
               namespaces
@@ -2017,7 +2017,12 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
    <define name="hi">
       <element name="hi">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Identification des lettrines) Information pour l'encodage des détails des lettrines du texte. [3.3.2.2. Emphatic Words and Phrases 3.3.2. Emphasis, Foreign Words, and Unusual Language]</a:documentation>
-         <ref name="macro.paraContent"/>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="choice"/>
+            </choice>
+         </zeroOrMore>
          <ref name="att.global.attribute.xmlid"/>
          <ref name="att.global.attribute.n"/>
          <ref name="att.global.attribute.xmllang"/>
@@ -2166,7 +2171,7 @@ Normalization 12. Critical Apparatus]</a:documentation>
    </define>
    <define name="unclear">
       <element name="unclear">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Attribut dommage ou illisible) Ajout de la différenciation entre des mots non transcrits pour cause de dommage matériels ou de problèmes de lecture. [11.3.3.1. Damage, Illegibility, and Supplied Text 3.5.3. Additions, Deletions, and Omissions]</a:documentation>
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Attribut dommage ou illisible) Ajout de la différenciation entre des mots non transcrits pour cause de dommage matériels (faded) ou de problèmes de lecture (illegible). [11.3.3.1. Damage, Illegibility, and Supplied Text 3.5.3. Additions, Deletions, and Omissions]</a:documentation>
          <ref name="macro.paraContent"/>
          <ref name="att.global.attribute.xmlid"/>
          <ref name="att.global.attribute.n"/>
@@ -2651,6 +2656,11 @@ Elements 7.2.5. Speech Contents]</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(column beginning) marks the beginning of a new column of a text on a multi-column page. [3.11.3. Milestone
 Elements]</a:documentation>
          <empty/>
+         <s:assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                   xmlns="http://www.tei-c.org/ns/1.0"
+                   xmlns:s="http://purl.oclc.org/dsdl/schematon"
+                   test="parent::tei:ab">L'élément cb ne peut qu'être contenu dans une
+                        balise ab.</s:assert>
          <ref name="att.global.attribute.xmlid"/>
          <ref name="att.global.attribute.n"/>
          <ref name="att.global.attribute.xmllang"/>
