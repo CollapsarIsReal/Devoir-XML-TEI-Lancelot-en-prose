@@ -3,7 +3,7 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
-<!DOCTYPE TEI SYSTEM "Lancelot_DTD.dtd">
+<!DOCTYPE TEI SYSTEM "..\EDITION\Lancelot_DTD.dtd">
 
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en"
    xmlns:s="http://purl.oclc.org/dsdl/schematon">
@@ -44,6 +44,9 @@
       <body>
          <div1>
             <head>Documentation à propos de l'édition numérique du <hi rend="italic">Lancelot en prose</hi>.</head>
+            <p><hi rend="italic">Cette documentation est inspirée des exemples de cours créés par notre référante, Mme <ref target="https://github.com/Segolene-Albouy">Ségolène Albouy</ref>.
+               Les documents en questions sont consultables à <ref target="https://github.com/Segolene-Albouy/XML-TEI_M2TNAH/tree/main/11-Personnalisation_ODD">cette adresse</ref>.
+               Nous souhaitons tout particulièrement la remercier pour son aide ainsi que son implication dans ce projet.</hi></p>
             <p>Cette documentation vise à justifier les choix d'encodage ayant eu lieu tout au long du projet afin que celui-ci
                soit facilement interropérable et réutilisable par qui le souhaite.</p>
             <p>Cette édition du Lancelot en prose recouvre deux feuillets du manuscrit, le 103 verso et le 104 recto.
