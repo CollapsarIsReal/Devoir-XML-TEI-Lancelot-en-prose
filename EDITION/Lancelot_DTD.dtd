@@ -13,7 +13,7 @@
 <!ENTITY bien "<choice><abbr>b&#241;</abbr><expan>bien</expan></choice>" >
 <!ENTITY chevalier "<choice><abbr>chl&#345;</abbr><expan>chevalier</expan></choice>" >
 <!ENTITY grant "<choice><abbr>g&#241;t</abbr><expan>grant</expan></choice>" >
-<!ENTITY omme "<choice><abbr>c&#333;</abbr><expan>omme</expan></choice>" >
+<!ENTITY omme "<choice><abbr>&#333;</abbr><expan>omme</expan></choice>" >
 <!ENTITY par "<choice><abbr>&#xa751;</abbr><expan>par</expan></choice>" >
 <!ENTITY pre "<choice><abbr>&#x1E55;</abbr><expan>pre</expan></choice>" >
 <!ENTITY que "<choice><abbr>&#xA757;</abbr><expan>que</expan></choice>">
