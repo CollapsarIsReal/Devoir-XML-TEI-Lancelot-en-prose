@@ -72,7 +72,7 @@
         </xsl:variable>
 
         <!-- DEBUT DES PAGES HTML -->
-        <!-- PAGE D'ACCUEIL -->
+        <!-- PAGE D'ACCUEIL OK -->
 
         <xsl:result-document href="{$pathAccueil}" method="html" indent="yes">
             <html>
@@ -152,22 +152,22 @@
                                         <a href="{$pathAllo}">
                                             <xsl:value-of select="concat('premier feuillet (', $feuillet1,'): ')"/>
                                         </a>
-                                        <!--<em>- <xsl:value-of
-                                                select="replace(.//ab[@n = '1']/cb[@n = '1'], 'chlřchevalierqui cil estoit qui li māan', 'chlř qui cil estoit qui li mā-... ')"
-                                            /></em> j'imagine qu'il y avait une méthode plus simple de faire, en faisant appel au mode "orig"
-                                                mais je n'y suis pas parvenu -->
-                                        <xsl:variable name="extrait_orig">
+                                        <xsl:variable name="extrait_orig1">
                                             <xsl:apply-templates select=".//ab[@n = '1']/cb[@n = '1']" mode="orig"/>
                                         </xsl:variable>
-                                        <em><xsl:apply-templates select="substring-before($extrait_orig, 'mā')"/></em>
+                                        <!-- A REPRENDRE : le mieux aurait été de faire un extrait qui se coupe à partir d'un certain nombre de caractères pour
+                                            ne pas dépendre du texte en lui même -->
+                                        <em>- <xsl:apply-templates select="substring-before($extrait_orig1, 'mā')"/><xsl:text>...</xsl:text></em>
                                     </li>
                                     <li>
                                         <a href="{$pathAllo2}">
-                                            <xsl:text>deuxième feuillet (104r): </xsl:text>
+                                            <xsl:value-of select="concat('deuxième feuillet (', $feuillet2,'): ')"/>
                                         </a>
-                                        <em><xsl:apply-templates select=".//ab[@n = '2']/cb[@n = '1']" mode="orig"/></em>
+                                        <xsl:variable name="extrait_orig2">
+                                            <xsl:apply-templates select=".//ab[@n = '2']/cb[@n = '1']" mode="orig"/>
+                                        </xsl:variable>
+                                        <em>- <xsl:value-of select="substring-before($extrait_orig2, 'la')"/><xsl:text>...</xsl:text></em>
                                     </li>
-                                    <!-- pas réussi à intégrer les "..."-->
                                 </ul>
                                 <li>
                                     <b>La transcription normalisée</b>
@@ -175,20 +175,21 @@
                                 <ul>
                                     <li>
                                         <a href="{$pathNorm}">
-                                            <xsl:text>premier feuillet (103v): </xsl:text>
+                                            <xsl:value-of select="concat('premier feuillet (', $feuillet1,'): ')"/>
                                         </a>
-                                        <em>- <xsl:value-of
-                                                select="replace(.//ab[@n = '1']/cb[@n = '1'], 'chlřchevalierqui cil estoit qui li māan', 'chevalier qui cil estoit qui li man-...')"
-                                            /></em>
+                                        <xsl:variable name="extrait_reg1">
+                                            <xsl:apply-templates select=".//ab[@n = '1']/cb[@n = '1']" mode="reg"/>
+                                        </xsl:variable>
+                                        <em>- <xsl:value-of select="substring-before($extrait_reg1, 'qui')"/><xsl:text>...</xsl:text></em>
                                     </li>
                                     <li>
                                         <a href="{$pathNorm2}">
-                                            <xsl:text>deuxième feuillet (104r): </xsl:text>
+                                            <xsl:value-of select="concat('deuxième feuillet (', $feuillet2,'): ')"/>
                                         </a>
-                                        <em>- <xsl:value-of
-                                                select="substring-before(replace(.//ab[@n = '2']/cb[@n = '1'], 'chlřchevalier', 'chevalier'), 'la')"
-                                            />...</em>
-                                        <!-- pas réussi à intégrer les "..."-->
+                                        <xsl:variable name="extrait_reg2">
+                                            <xsl:apply-templates select=".//ab[@n = '2']/cb[@n = '1']" mode="reg"/>
+                                        </xsl:variable>
+                                        <em>- <xsl:value-of select="substring-before($extrait_reg2, 'la')"/><xsl:text>...</xsl:text></em>
                                     </li>
                                 </ul>
                                 <li>
@@ -630,6 +631,15 @@
     <!-- - - - -VERSION ALLOGRAPHETIQUE - - - - -->
 
 
+    <!-- affichage de l'édition version normalisée -->
+    <xsl:template match="choice" mode="reg">
+        
+        <xsl:value-of select="
+            .//reg/text() |
+            .//expan//text() | .//ex/text()"/>
+    </xsl:template>
+    
+
     <xsl:template match="choice" mode="orig">
 
         <xsl:value-of select="
@@ -678,14 +688,6 @@
                 </span>
             </xsl:when>
         </xsl:choose>
-    </xsl:template>
-
-    <!-- affichage de l'édition version normalisée -->
-    <xsl:template match="choice" mode="reg">
-
-        <xsl:value-of select="
-                .//reg/text() |
-                .//expan//text() | .//ex/text()"/>
     </xsl:template>
 
 
