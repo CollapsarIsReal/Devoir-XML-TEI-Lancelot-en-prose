@@ -8,6 +8,7 @@
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
     <xsl:strip-space elements="*"/>
     <!-- pour éviter les espaces non voulus -->
+    <!-- TEMPLATE PAGES HTML -->
     <xsl:template match="/">
         <xsl:variable name="witfile">
             <xsl:value-of select="replace(base-uri(.), '.xml', '')"/>
@@ -28,9 +29,6 @@
         <xsl:variable name="pathNorm2">
             <xsl:value-of select="concat($witfile, 'norm2', '.html')"/>
         </xsl:variable>
-        <!--<xsl:variable name="pathIndexLieux">
-            <xsl:value-of select="concat($witfile,'indexLieux','.html')"/>
-        </xsl:variable>-->
         <xsl:variable name="pathIndexPers">
             <xsl:value-of select="concat($witfile, 'indexPers', '.html')"/>
         </xsl:variable>
@@ -40,13 +38,9 @@
         <xsl:variable name="pathnoticems">
             <xsl:value-of select="concat($witfile, 'noticems', '.html')"/>
         </xsl:variable>
-        <!--<xsl:variable name="pathchap">
-            <xsl:value-of select="concat($witfile, 'chap','.html')"/>
-        </xsl:variable>-->
-
-        <!--<xsl:variable name="titre_manuscrit">
-            <xsl:value-of select="concat(.//head/title, ' ', '(',.//head/origDate, ')', ' de ', .//name[@xml:id='Gauthier_Map'] )"/>
-        </xsl:variable>-->
+        <xsl:variable name="path-biblio">
+            <xsl:value-of select="concat($witfile, 'biblio', '.html')"/>
+        </xsl:variable>
 
         <!-- DEFINITION DES VARIABLES UTILES -->
         <xsl:variable name="titre">
@@ -70,9 +64,10 @@
         <xsl:variable name="feuillet2">
             <xsl:value-of select="replace(//pb[2]/[@xml:id], 'f', '')"/>
         </xsl:variable>
+        
 
         <!-- DEBUT DES PAGES HTML -->
-        <!-- PAGE D'ACCUEIL -->
+        <!-- PAGE D'ACCUEIL OK -->
 
         <xsl:result-document href="{$pathAccueil}" method="html" indent="yes">
             <html>
@@ -133,6 +128,7 @@
                                 bien encore en ce qui concerne l'encodage de la forme normalisée qui
                                 n'avait pas pris en compte la normalisation des espaces, majuscules,
                                 voyelles (u,i) et autres spécificités).</p>
+                            <p> Ce travail est un donc un travail à reprendre depuis sa structure XML.</p>
                         </div>
                         <div class="colonne" n="2">
                             <h2>Sommaire</h2>
@@ -149,21 +145,24 @@
                                 <ul>
                                     <li>
                                         <a href="{$pathAllo}">
-                                            <xsl:text>premier feuillet (103v): </xsl:text>
+                                            <xsl:value-of select="concat('premier feuillet (', $feuillet1,'): ')"/>
                                         </a>
-                                        <em>- <xsl:value-of
-                                                select="replace(.//ab[@n = '1']/cb[@n = '1'], 'chlřchevalierqui cil estoit qui li māan', 'chlř qui cil estoit qui li mā-... ')"
-                                            /></em>
+                                        <xsl:variable name="extrait_orig1">
+                                            <xsl:apply-templates select=".//ab[@n = '1']/cb[@n = '1']" mode="orig"/>
+                                        </xsl:variable>
+                                        <!-- A REPRENDRE : le mieux aurait été de faire un extrait qui se coupe à partir d'un certain nombre de caractères pour
+                                            ne pas dépendre du texte en lui même -->
+                                        <em>- <xsl:apply-templates select="substring-before($extrait_orig1, 'mā')"/><xsl:text>...</xsl:text></em>
                                     </li>
                                     <li>
                                         <a href="{$pathAllo2}">
-                                            <xsl:text>deuxième feuillet (104r): </xsl:text>
+                                            <xsl:value-of select="concat('deuxième feuillet (', $feuillet2,'): ')"/>
                                         </a>
-                                        <em>- <xsl:value-of
-                                                select="substring-before(replace(.//ab[@n = '2']/cb[@n = '1'], 'chlřchevalier', 'chlř'), 'la')"
-                                            />...</em>
+                                        <xsl:variable name="extrait_orig2">
+                                            <xsl:apply-templates select=".//ab[@n = '2']/cb[@n = '1']" mode="orig"/>
+                                        </xsl:variable>
+                                        <em>- <xsl:value-of select="substring-before($extrait_orig2, 'la')"/><xsl:text>...</xsl:text></em>
                                     </li>
-                                    <!-- pas réussi à intégrer les "..."-->
                                 </ul>
                                 <li>
                                     <b>La transcription normalisée</b>
@@ -171,24 +170,28 @@
                                 <ul>
                                     <li>
                                         <a href="{$pathNorm}">
-                                            <xsl:text>premier feuillet (103v): </xsl:text>
+                                            <xsl:value-of select="concat('premier feuillet (', $feuillet1,'): ')"/>
                                         </a>
-                                        <em>- <xsl:value-of
-                                                select="replace(.//ab[@n = '1']/cb[@n = '1'], 'chlřchevalierqui cil estoit qui li māan', 'chevalier qui cil estoit qui li man-...')"
-                                            /></em>
+                                        <xsl:variable name="extrait_reg1">
+                                            <xsl:apply-templates select=".//ab[@n = '1']/cb[@n = '1']" mode="reg"/>
+                                        </xsl:variable>
+                                        <em>- <xsl:value-of select="substring-before($extrait_reg1, 'qui')"/><xsl:text>...</xsl:text></em>
                                     </li>
                                     <li>
                                         <a href="{$pathNorm2}">
-                                            <xsl:text>deuxième feuillet (104r): </xsl:text>
+                                            <xsl:value-of select="concat('deuxième feuillet (', $feuillet2,'): ')"/>
                                         </a>
-                                        <em>- <xsl:value-of
-                                                select="substring-before(replace(.//ab[@n = '2']/cb[@n = '1'], 'chlřchevalier', 'chevalier'), 'la')"
-                                            />...</em>
-                                        <!-- pas réussi à intégrer les "..."-->
+                                        <xsl:variable name="extrait_reg2">
+                                            <xsl:apply-templates select=".//ab[@n = '2']/cb[@n = '1']" mode="reg"/>
+                                        </xsl:variable>
+                                        <em>- <xsl:value-of select="substring-before($extrait_reg2, 'la')"/><xsl:text>...</xsl:text></em>
                                     </li>
                                 </ul>
                                 <li>
                                     <a href="{$pathIndexPers}">L'index des noms de personnages</a>
+                                </li>
+                                <li>
+                                    <a href="{$path-biblio}">Bibliographie évoquant le manuscrit</a>
                                 </li>
                             </ul>
                         </div>
@@ -263,7 +266,15 @@
                     <div class="row">
                         <xsl:apply-templates select="//ab[@n = '1']" mode="reg"/>
                     </div>
-
+                    <!-- A REPRENDRE : eviter d'avoir à le remettre à la fin de chaque page HTML de transcription -->
+                    <div class="legende">
+                        <h4><xsl:text>Légende : </xsl:text></h4>
+                        <ul>
+                            <li><div class="css_perso">nom_personnage</div></li>
+                            <li><div class="illegible">{mot_non_transcrit}</div></li>
+                            <li><span class="faded">mot_illisible</span></li>
+                        </ul>
+                    </div>
                 </body>
             </html>
         </xsl:result-document>
@@ -315,7 +326,14 @@
                     <div class="row">
                         <xsl:apply-templates select=".//ab[@n = '2']" mode="reg"/>
                     </div>
-
+                    <div class="legende">
+                        <h4><xsl:text>Légende : </xsl:text></h4>
+                        <ul>
+                            <li><div class="css_perso">nom_personnage</div></li>
+                            <li><div class="illegible">{mot_non_transcrit}</div></li>
+                            <li><span class="faded">mot_illisible</span></li>
+                        </ul>
+                    </div>
                 </body>
             </html>
         </xsl:result-document>
@@ -367,7 +385,14 @@
                         <xsl:apply-templates select=".//ab[@n = '1']" mode="orig"/>
 
                     </div>
-
+                    <div class="legende">
+                        <h4><xsl:text>Légende : </xsl:text></h4>
+                        <ul>
+                            <li><div class="css_perso">nom_personnage</div></li>
+                            <li><div class="illegible">{mot_non_transcrit}</div></li>
+                            <li><span class="faded">mot_illisible</span></li>
+                        </ul>
+                    </div>
                 </body>
             </html>
         </xsl:result-document>
@@ -418,7 +443,14 @@
                     <div class="row">
                         <xsl:apply-templates select=".//ab[@n = '2']" mode="orig"/>
                     </div>
-
+                    <div class="legende">
+                        <h4><xsl:text>Légende : </xsl:text></h4>
+                        <ul>
+                            <li><div class="css_perso">nom_personnage</div></li>
+                            <li><div class="illegible">{mot_non_transcrit}</div></li>
+                            <li><span class="faded">mot_illisible</span></li>
+                        </ul>
+                    </div>
                 </body>
             </html>
         </xsl:result-document>
@@ -445,6 +477,30 @@
                         <ul>
                             <xsl:call-template name="indexPers"/>
                         </ul>
+                    </div>
+                </body>
+            </html>
+        </xsl:result-document>
+        
+        <!-- PAGE DE LA BIBLIOGRAPHIE -->
+        <xsl:result-document href="{$path-biblio}" method="html" indent="yes">
+            <html>
+                <head>
+                    <xsl:call-template name="meta-header"/>
+                    <title>
+                        <xsl:value-of select="concat($titre, ' | ', 'Références bibliographiques')"/>
+                    </title>
+                </head>
+                <body>
+                    <h2>
+                        <xsl:value-of select="TEI/teiHeader//listBibl/head"/>
+                    </h2><span>
+                        <a href="{$pathAccueil}">Retour accueil</a>
+                    </span>
+                    <div class="container">
+                        <div class="col-md-10 col-md-offset-2">
+                            <xsl:call-template name="biblio"/>
+                        </div>
                     </div>
                 </body>
             </html>
@@ -551,20 +607,18 @@
             <dd>
                 <xsl:apply-templates select="//decoDesc/decoNote"/>
             </dd>
-            <!--<dd><xsl:value-of select="concat(.//decoDesc/decoNote[1]/@type, ', ', .//decoDesc/decoNote[2]/@type, ' ornées')"/></dd>
-                        <dd>Les décorations sont davantages détaillées dans la présentation de chaque chapitre/rubrique du manuscrit qui précède les transcriptions.</dd>-->
             <div class="column">
                 <dt>
                     <b>Reliure :</b>
                 </dt>
-                <p>
+                <dd>
                     <xsl:value-of
                         select=".//decoNote[@type = 'plats'] | .//decoNote[@type = 'dos'] | .//decoNote[@type = 'contreplats']"
                     />
-                </p>
-                <p>
-                    <img src="armoiries.jpg" width="150px"/>
-                </p>
+                </dd>
+                <dd>
+                    <img class="img" src="armoiries.jpg" width="150px"/>
+                </dd>
             </div>
 
 
@@ -592,6 +646,8 @@
 
 
     </xsl:template>
+    
+    
 
 
     <!-- HEADER HTML -->
@@ -622,10 +678,16 @@
 
     </xsl:template>
 
-    <!-- TEXTE TRANSCRIT -->
-    <!-- - - - -VERSION ALLOGRAPHETIQUE - - - - -->
-
-
+    <!-- LES DIFFERENTES TRANSCRIPTIONS -->
+    <!-- affichage de l'édition version normalisée -->
+    <xsl:template match="choice" mode="reg">
+        
+        <xsl:value-of select="
+            .//reg/text() |
+            .//expan//text() | .//ex/text()"/>
+    </xsl:template>
+    
+    <!-- affichage de l'édition version allographétique -->
     <xsl:template match="choice" mode="orig">
 
         <xsl:value-of select="
@@ -633,8 +695,9 @@
                 .//abbr/text() | .//sic/text()"/>
 
     </xsl:template>
-    <!-- - - - -VERSION MODERNISÉE - - - - -->
-    <!-- lettrines en couleur : il faudrait l'améliorer en passant la couleur dans une variable pour
+    
+    <!-- gestion des lettrines en couleurs -->
+    <!-- A REPRENDRE : il faudrait l'améliorer en passant la couleur dans une variable pour
         prévoir d'autres couleurs que le bleu -->
     <xsl:template match="//hi" mode="#all">
         <xsl:choose>
@@ -649,10 +712,17 @@
         </xsl:choose>
     </xsl:template>
 
-    <!-- gestion des <persName> -->
-    <xsl:template match="TEI//body//persName" mode="#all">
+    <!-- gestion des <persName> pour ajouter une css_perso -->
+    <!-- A REPRENDRE : se répète entre la version orig et reg, aurait pu être amélioré -->
+    <xsl:template match="TEI//body//persName" mode="reg">
         <span class="css_perso">
             <xsl:apply-templates mode="reg"/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="TEI//body//persName" mode="orig">
+        <span class="css_perso">
+            <xsl:apply-templates mode="orig"/>
         </span>
     </xsl:template>
 
@@ -667,6 +737,8 @@
                     <xsl:text>}</xsl:text>
                 </span>
             </xsl:when>
+            <!-- gestion des mots illisibles à cause du support abbimé, création d'une classe
+            pour pouvoir les gérer avec de la css-->
             <xsl:when test="@reason = 'faded'">
                 <span>
                     <xsl:attribute name="class"><xsl:text>faded</xsl:text>
@@ -676,16 +748,9 @@
         </xsl:choose>
     </xsl:template>
 
-    <!-- affichage de l'édition version normalisée -->
-    <xsl:template match="choice" mode="reg">
 
-        <xsl:value-of select="
-                .//reg/text() |
-                .//expan//text() | .//ex/text()"/>
-    </xsl:template>
-
-
-    <!-- création d'attribut class="colonne" pour gérer l'affichage css par la suite -->
+    <!-- création d'attribut class="colonne" au texte pour gérer l'affichage css par la suite -->
+    <!-- A REFPRENDRE : comme dit plus bas, gérer les occurence en les groupant par feuillets pour plus de clarté -->
     <xsl:template match="text/body//cb" mode="#all">
         <xsl:element name="div">
             <xsl:attribute name="class">
@@ -698,11 +763,11 @@
         </xsl:element>
     </xsl:template>
 
-    <!-- L'index des personnages -->
+    <!-- gestion de l'index des personnages -->
     <xsl:template name="indexPers">
         <xsl:for-each select="//listPerson/person/persName">
             <li>
-                <xsl:value-of select="."/>
+                <b><xsl:value-of select="."/></b>
                 <xsl:variable name="idPerson">
                     <xsl:value-of select="parent::person/@xml:id"/>
                 </xsl:variable>
@@ -744,5 +809,87 @@
         </xsl:for-each>
     </xsl:template>
 
+    <!-- gestion (très basique) de la bibliographie -->
+    <xsl:template name="biblio">
+        <div class="container">
+            <xsl:apply-templates select="TEI/teiHeader//listBibl/bibl"/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="TEI/teiHeader//listBibl/bibl">
+        <div class="biblio">
+            <p>
+                <xsl:apply-templates select=".//author"/>
+                <xsl:apply-templates select=".//title"/>
+                <xsl:if test=".//pubPlace">
+                    <xsl:value-of select="concat(.//pubPlace, ', ')"/>
+                </xsl:if>
+                <xsl:apply-templates select=".//editor"/>
+                <xsl:if test=".//publisher">
+                    <xsl:value-of select="concat(.//publisher, ', ')"/>
+                </xsl:if>
+                <xsl:if test=".//date">
+                    <xsl:value-of select=".//date"/>
+                </xsl:if>
+                <xsl:choose>
+                    <xsl:when test=".//biblScope">
+                        <xsl:apply-templates select=".//biblScope"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>.</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </p>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="TEI//bibl//author">
+        <xsl:choose>
+            <xsl:when test="./persName">
+                <span>
+                    <xsl:apply-templates select="./persName"/>
+                </span>
+            </xsl:when>
+            <xsl:otherwise>
+                <span>
+                    <xsl:value-of select="."/>
+                </span>
+                <xsl:text>, </xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="TEI//bibl//author/persName">
+        <xsl:value-of select="concat(., ', ')"/>
+    </xsl:template>
+    
+    <xsl:template match="TEI//bibl//editor">
+        <xsl:choose>
+            <xsl:when test="./persName">
+                <xsl:apply-templates select="./persName"/>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="TEI//bibl//title">
+        <xsl:choose>
+            <xsl:when test="@type='a'">
+                <xsl:text>« </xsl:text>
+                <xsl:value-of select="."/>
+                <xsl:text> », </xsl:text>
+            </xsl:when>
+            <xsl:when test="@type='m'">
+                <em><xsl:value-of select="."/></em>
+                <xsl:text>, </xsl:text>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="TEI//bibl//biblScope">
+        <xsl:value-of select="concat(', ', .)"/>
+        <xsl:if test="position() = last()">
+            <xsl:text>.</xsl:text>
+        </xsl:if>
+    </xsl:template>
 
 </xsl:stylesheet>

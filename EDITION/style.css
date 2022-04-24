@@ -55,14 +55,18 @@ h3 {
     padding: 3px
 }
 
+dt {
+    margin: 5px;
+}
 li {
     margin: 10px;
 }
 
-div.row {
-    display: flex;
-}
-
 img {
     margin: 20px;
+}
+
+
+div.row {
+    display: flex;
 }
