@@ -8,6 +8,3 @@ Ce repository comporte trois dossiers:
 - un dossier EDITION qui contient le fichier XML de l'édition + le fichier DTD.
 - un dossier IMAGES qui contient les deux images relatives aux folio 103v et 104r.
 - un dossier ODD qui comporte le fichier ODD ainsi que ses deux transformations en rng et html.
-
-N'hésitez pas à prendre contact avec moi si vous avez la moindre question sur le projet. 
-Je suis disponible à cette adresse mail: elsa.falcoz@chartes.psl.eu
