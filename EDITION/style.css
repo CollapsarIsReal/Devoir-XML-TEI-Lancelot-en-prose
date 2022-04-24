@@ -45,11 +45,24 @@ h3 {
 
 .legende {
     display: flex;
+    border-bottom: solid steelblue;
 }
+
+.biblio {
+    border-top: dotted 1px;
+    border-bottom: dotted 1px;
+    margin: 3px;
+    padding: 3px
+}
+
 li {
     margin: 10px;
 }
 
 div.row {
     display: flex;
+}
+
+img {
+    margin: 20px;
 }
