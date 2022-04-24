@@ -37,6 +37,9 @@
         <xsl:variable name="pathnoticems">
             <xsl:value-of select="concat($witfile, 'noticems', '.html')"/>
         </xsl:variable>
+        <xsl:variable name="path-biblio">
+            <xsl:value-of select="concat($witfile, 'biblio', '.html')"/>
+        </xsl:variable>
 
         <!-- DEFINITION DES VARIABLES UTILES -->
         <xsl:variable name="titre">
@@ -185,6 +188,9 @@
                                 </ul>
                                 <li>
                                     <a href="{$pathIndexPers}">L'index des noms de personnages</a>
+                                </li>
+                                <li>
+                                    <a href="{$path-biblio}">Bibliographie évoquant le manuscrit</a>
                                 </li>
                             </ul>
                         </div>
@@ -474,6 +480,30 @@
                 </body>
             </html>
         </xsl:result-document>
+        
+        <!-- PAGE DE LA BIBLIOGRAPHIE -->
+        <xsl:result-document href="{$path-biblio}" method="html" indent="yes">
+            <html>
+                <head>
+                    <xsl:call-template name="meta-header"/>
+                    <title>
+                        <xsl:value-of select="concat($titre, ' | ', 'Références bibliographiques')"/>
+                    </title>
+                </head>
+                <body>
+                    <h2>
+                        <xsl:value-of select="TEI/teiHeader//listBibl/head"/>
+                    </h2><span>
+                        <a href="{$pathAccueil}">Retour accueil</a>
+                    </span>
+                    <div class="container">
+                        <div class="col-md-10 col-md-offset-2">
+                            <xsl:call-template name="biblio"/>
+                        </div>
+                    </div>
+                </body>
+            </html>
+        </xsl:result-document>
     </xsl:template>
     <!--FIN DES PAGES HTML-->
 
@@ -615,6 +645,8 @@
 
 
     </xsl:template>
+    
+    
 
 
     <!-- HEADER HTML -->
@@ -776,5 +808,87 @@
         </xsl:for-each>
     </xsl:template>
 
+    <!-- gestion (très basique) de la bibliographie -->
+    <xsl:template name="biblio">
+        <div class="container">
+            <xsl:apply-templates select="TEI/teiHeader//listBibl/bibl"/>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="TEI/teiHeader//listBibl/bibl">
+        <div class="biblio">
+            <p>
+                <xsl:apply-templates select=".//author"/>
+                <xsl:apply-templates select=".//title"/>
+                <xsl:if test=".//pubPlace">
+                    <xsl:value-of select="concat(.//pubPlace, ', ')"/>
+                </xsl:if>
+                <xsl:apply-templates select=".//editor"/>
+                <xsl:if test=".//publisher">
+                    <xsl:value-of select="concat(.//publisher, ', ')"/>
+                </xsl:if>
+                <xsl:if test=".//date">
+                    <xsl:value-of select=".//date"/>
+                </xsl:if>
+                <xsl:choose>
+                    <xsl:when test=".//biblScope">
+                        <xsl:apply-templates select=".//biblScope"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>.</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </p>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="TEI//bibl//author">
+        <xsl:choose>
+            <xsl:when test="./persName">
+                <span>
+                    <xsl:apply-templates select="./persName"/>
+                </span>
+            </xsl:when>
+            <xsl:otherwise>
+                <span>
+                    <xsl:value-of select="."/>
+                </span>
+                <xsl:text>, </xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="TEI//bibl//author/persName">
+        <xsl:value-of select="concat(., ', ')"/>
+    </xsl:template>
+    
+    <xsl:template match="TEI//bibl//editor">
+        <xsl:choose>
+            <xsl:when test="./persName">
+                <xsl:apply-templates select="./persName"/>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="TEI//bibl//title">
+        <xsl:choose>
+            <xsl:when test="@type='a'">
+                <xsl:text>« </xsl:text>
+                <xsl:value-of select="."/>
+                <xsl:text> », </xsl:text>
+            </xsl:when>
+            <xsl:when test="@type='m'">
+                <em><xsl:value-of select="."/></em>
+                <xsl:text>, </xsl:text>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="TEI//bibl//biblScope">
+        <xsl:value-of select="concat(', ', .)"/>
+        <xsl:if test="position() = last()">
+            <xsl:text>.</xsl:text>
+        </xsl:if>
+    </xsl:template>
 
 </xsl:stylesheet>
