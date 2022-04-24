@@ -28,9 +28,6 @@
         <xsl:variable name="pathNorm2">
             <xsl:value-of select="concat($witfile, 'norm2', '.html')"/>
         </xsl:variable>
-        <!--<xsl:variable name="pathIndexLieux">
-            <xsl:value-of select="concat($witfile,'indexLieux','.html')"/>
-        </xsl:variable>-->
         <xsl:variable name="pathIndexPers">
             <xsl:value-of select="concat($witfile, 'indexPers', '.html')"/>
         </xsl:variable>
@@ -40,13 +37,6 @@
         <xsl:variable name="pathnoticems">
             <xsl:value-of select="concat($witfile, 'noticems', '.html')"/>
         </xsl:variable>
-        <!--<xsl:variable name="pathchap">
-            <xsl:value-of select="concat($witfile, 'chap','.html')"/>
-        </xsl:variable>-->
-
-        <!--<xsl:variable name="titre_manuscrit">
-            <xsl:value-of select="concat(.//head/title, ' ', '(',.//head/origDate, ')', ' de ', .//name[@xml:id='Gauthier_Map'] )"/>
-        </xsl:variable>-->
 
         <!-- DEFINITION DES VARIABLES UTILES -->
         <xsl:variable name="titre">
@@ -70,6 +60,7 @@
         <xsl:variable name="feuillet2">
             <xsl:value-of select="replace(//pb[2]/[@xml:id], 'f', '')"/>
         </xsl:variable>
+        
 
         <!-- DEBUT DES PAGES HTML -->
         <!-- PAGE D'ACCUEIL OK -->
@@ -268,7 +259,15 @@
                     <div class="row">
                         <xsl:apply-templates select="//ab[@n = '1']" mode="reg"/>
                     </div>
-
+                    <!-- A REPRENDRE : eviter d'avoir à le remettre à la fin de chaque page HTML de transcription -->
+                    <div class="legende">
+                        <h4><xsl:text>Légende : </xsl:text></h4>
+                        <ul>
+                            <li><div class="css_perso">nom_personnage</div></li>
+                            <li><div class="illegible">{mot_non_transcrit}</div></li>
+                            <li><span class="faded">mot_illisible</span></li>
+                        </ul>
+                    </div>
                 </body>
             </html>
         </xsl:result-document>
@@ -320,7 +319,14 @@
                     <div class="row">
                         <xsl:apply-templates select=".//ab[@n = '2']" mode="reg"/>
                     </div>
-
+                    <div class="legende">
+                        <h4><xsl:text>Légende : </xsl:text></h4>
+                        <ul>
+                            <li><div class="css_perso">nom_personnage</div></li>
+                            <li><div class="illegible">{mot_non_transcrit}</div></li>
+                            <li><span class="faded">mot_illisible</span></li>
+                        </ul>
+                    </div>
                 </body>
             </html>
         </xsl:result-document>
@@ -372,7 +378,14 @@
                         <xsl:apply-templates select=".//ab[@n = '1']" mode="orig"/>
 
                     </div>
-
+                    <div class="legende">
+                        <h4><xsl:text>Légende : </xsl:text></h4>
+                        <ul>
+                            <li><div class="css_perso">nom_personnage</div></li>
+                            <li><div class="illegible">{mot_non_transcrit}</div></li>
+                            <li><span class="faded">mot_illisible</span></li>
+                        </ul>
+                    </div>
                 </body>
             </html>
         </xsl:result-document>
@@ -423,7 +436,14 @@
                     <div class="row">
                         <xsl:apply-templates select=".//ab[@n = '2']" mode="orig"/>
                     </div>
-
+                    <div class="legende">
+                        <h4><xsl:text>Légende : </xsl:text></h4>
+                        <ul>
+                            <li><div class="css_perso">nom_personnage</div></li>
+                            <li><div class="illegible">{mot_non_transcrit}</div></li>
+                            <li><span class="faded">mot_illisible</span></li>
+                        </ul>
+                    </div>
                 </body>
             </html>
         </xsl:result-document>

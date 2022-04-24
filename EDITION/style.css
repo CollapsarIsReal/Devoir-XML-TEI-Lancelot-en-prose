@@ -27,20 +27,24 @@ h3 {
 
 }
 
-span.css_perso {
+.css_perso {
 
     color: teal;
     font-style: normal;
 }
 
-span.illegible {
+.illegible {
     color: tomato;
 }
 
-span.faded {
+.faded {
     color: slategray;
     border-bottom: dotted 1px;
     border-top: dotted 1px;
+}
+
+.legende {
+    display: flex;
 }
 li {
     margin: 10px;
