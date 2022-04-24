@@ -3,54 +3,36 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="xs tei"
     version="2.0">
-    
-    
-    <xsl:template match="TEI|text|body|ab">
+
+
+    <xsl:template match="TEI | body">
         <xsl:copy>
-            <xsl:apply-templates/>
+            <div>
+                <xsl:call-template name="feuillet"/>
+            </div>
         </xsl:copy>
     </xsl:template>
-    
-    <xsl:template match="ab|persName">
-        <b><xsl:call-template name="indexPers"/></b>
-    </xsl:template>
-    
-    <!-- L'index des personnages -->
-    <xsl:template name="indexPers">
-        <xsl:for-each select="//listPerson/person/persName">
-            <li>
-                <xsl:value-of select="."/>
-                <xsl:variable name="idPerson">
-                    <xsl:value-of select="parent::person/@xml:id"/>
-                </xsl:variable>
-                <xsl:variable name="nb-occurrence">
-                    <xsl:value-of
-                        select="count(ancestor::TEI//body//persName[replace(@ref, '#', '') = $idPerson])"
-                    />
-                </xsl:variable>
-                <xsl:text> : </xsl:text>
-                <em><xsl:value-of select="concat('(', ancestor::person/note, ')')"/></em>
-                <div><xsl:text>Nombre d'occurences :</xsl:text><xsl:value-of select="$nb-occurrence"/></div>
-                PLOP<p>
-                    
-                    <xsl:for-each select="ancestor::TEI//body//persName[replace(@ref, '#','')=$idPerson]">
-                        <xsl:choose>
-                            <xsl:when test="ancestor::ab">
-                                <div>Feuillet n° <xsl:value-of select="ancestor::ab/@n[position()=last()]"/>
-                                    Colonne n° <xsl:value-of select="parent::cb/@n"/></div>
-                                    <xsl:choose>
-                                        <xsl:when test="position()!= last()">, </xsl:when>
-                                        <xsl:otherwise>.</xsl:otherwise>
-                                    </xsl:choose> 
-                            </xsl:when>
-                        </xsl:choose>
-                    </xsl:for-each>
-                </p>
-            </li>
-        </xsl:for-each>
-    </xsl:template>
-    
 
-    <xsl:template match="teiHeader"/>
-    
+    <!--<xsl:variable name="feuillet1">
+        <xsl:value-of select="replace(//pb[1]/[@xml:id], 'f', '')"/>
+    </xsl:variable>
+    <xsl:variable name="feuillet2">
+        <xsl:value-of select="replace(//pb[2]/[@xml:id], 'f', '')"/>
+    </xsl:variable>-->
+
+    <xsl:template match="pb" name="feuillet">
+        <xsl:choose>
+            <xsl:when test="self::pb[1]"> Feuillet <xsl:value-of
+                    select="replace(//pb[1]/[@xml:id], 'f', '')"/>
+            </xsl:when>
+            <xsl:when test="self::pb[2]">
+                <xsl:value-of select="replace(//pb[2]/[@xml:id], 'f', '')"/>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+
+
+    <!--elect="count(ancestor::TEI//body//persName[replace(@ref, '#', '') = $idPerson])"-->
+    <xsl:template match="teiHeader | facsimile | ab"/>
+
 </xsl:stylesheet>

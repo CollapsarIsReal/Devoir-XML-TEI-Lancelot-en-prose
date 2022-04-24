@@ -7,48 +7,49 @@
       <meta name="description" content="Édition numérique du Lancelot en prose dans le manuscrit Français 16999 du Département des manuscrits de la Bibliothèque nationale de France">
       <meta name="keywords" content="XSLT,XML,TEI">
       <link rel="icon" type="image/png" href="IMAGES/Lancelot_IMG_f.103v.jpeg">
-      <title>Lancelot en prose</title>
+      <title>Lancelot en prose - accueil</title>
       <style>
-                        
                         .container {
-                        display: flex;
+                            display: flex;
                         }
                         
                         div.colonne {
-                        float: left;
-                        width: 50%;
-                        margin: 10px;
-                        border-right: dotted 1px;
-                        padding-right: 15px;
-                        text-align: justify;
+                            float: left;
+                            width: 50%;
+                            margin: 10px;
+                            border-right: dotted 1px;
+                            padding-right: 15px;
+                            text-align: justify;
                         }
                         
-                       img {
-                       display: block;
-                       text-align: center;
-                       margin: 50px;
-                       }
-                    </style>
+                        img {
+                            display: block;
+                            text-align: center;
+                            margin: 50px;
+                        }</style>
    </head>
    <body>
       <h1>Lancelot en prose, Chapitres 056/057 : Quête de Gauvain et situation d’Hector</h1>
       <div class="container">
          <div class="colonne" n="1">
             <p>Cette édition en ligne a été réalisée à partir du manuscrit Français 16999 conservé
-               à la Bibliothèque nationale de France.                     
-               Une feuille de transformation XSL a été rédigée dans le cadre d une évalutation du
-               cours de XSLT du <a href="https://www.chartes.psl.eu/fr/rubrique-admissions/master-technologies-numeriques-appliquees-histoire">Master 2 TNAH</a> de l 
-               Ecole nationale des Chartes réalisés par  </p>
+               à la Bibliothèque nationale de France.  Une feuille de transformation XSL a été rédigée dans le cadre d
+               une évalutation du cours de XSLT du <a href="https://www.chartes.psl.eu/fr/rubrique-admissions/master-technologies-numeriques-appliquees-histoire">Master 2 TNAH</a> de l Ecole nationale des Chartes réalisés par
+                </p>
             <p>Cette édition propose d'explorer deux des 291 feuillets du Lancelot en prose.</p>
-            <p>On y trouvera différentes exploitation notamment <em>une transcription allographétique</em>, une <em> autre version modernisée</em>,
-               , un rapide <em>index des personnages</em> présents dans les deux feuillets édités ainsi que la <em>notice du manuscrit</em>.</p>
-            <p>Malheureusement certaisns choix effectués lors de l'encodage XML du manuscrit ont
-               rendu compliqué la transformation
-               HTML (par exemple celui de traiter les lignes du texte uniquement dans des balises
+            <p>On y trouvera différentes exploitation notamment <em>une
+                  transcription allographétique</em>, une <em> autre version
+                  modernisée</em>, , un rapide <em>index des personnages</em>
+               présents dans les deux feuillets édités ainsi que la <em>notice du
+                  manuscrit</em>.</p>
+            <p>Malheureusement certaisns choix effectués lors de l'encodage XML du
+               manuscrit ont rendu compliqué la transformation HTML (par exemple
+               celui de traiter les lignes du texte uniquement dans des balises
                <em>lb</em> autofermantes, rendant l'accès au texte complexe, ou
-               bien encore en ce qui concerne l'encodage de la forme normalisée qui n'avait pas pris
-               en compte la normalisation des espaces, majuscules,
+               bien encore en ce qui concerne l'encodage de la forme normalisée qui
+               n'avait pas pris en compte la normalisation des espaces, majuscules,
                voyelles (u,i) et autres spécificités).</p>
+            <p> Ce travail est un donc un travail à reprendre depuis sa structure XML.</p>
          </div>
          <div class="colonne" n="2">
             <h2>Sommaire</h2>
@@ -56,12 +57,53 @@
                <li><a href="file:/C:/Users/USER/Documents/Documents%202021-2022/Cours/XML%20TEI/Devoir/EDITION/Lancelot_edition_noticems.html">Notice du manucrit Français 16999</a></li>
                <li><b>La transcription allographétique</b></li>
                <ul>
-                  <li><a href="file:/C:/Users/USER/Documents/Documents%202021-2022/Cours/XML%20TEI/Devoir/EDITION/Lancelot_edition_allograph.html">premier feuillet (103v): </a><em>- Lors commence la
+                  <li><a href="file:/C:/Users/USER/Documents/Documents%202021-2022/Cours/XML%20TEI/Devoir/EDITION/Lancelot_edition_allograph.html">premier feuillet (103v): </a><em>Lors commence la
                         royne apenser et
-                        puis demande au chlřchevalier qui cil estoit qui li māan</em></li>
-                  <li><a href="file:/C:/Users/USER/Documents/Documents%202021-2022/Cours/XML%20TEI/Devoir/EDITION/Lancelot_edition_allograph2.html">deuxième feuillet (104r): </a><em>- il est un chlř lemeilleur
-                        qui orendroit soit si pria
-                        une dame damours ...</em></li>
+                        puis demande au chlř qui cil estoit qui li </em></li>
+                  <li><a href="file:/C:/Users/USER/Documents/Documents%202021-2022/Cours/XML%20TEI/Devoir/EDITION/Lancelot_edition_allograph2.html">deuxième feuillet (104r): </a><em>
+                        <div class="colonne" id="1">il est un chlř lemeilleur
+                           qui orendroit soit si pria
+                           une dame damours la
+                           plus vaillans qui ore vi
+                           ve <span class="illegible">{aumien}</span>audier<span class="illegible">{ena}</span>⁊fist li chlřs que par prie
+                           re que par oir que la da
+                           me li otroia lamour
+                           mais plus nia encore
+                           que le baisier ⁊ lacoler
+                           li comme vous veez en 
+                           cest esta et quant il a
+                           rendra que liamours
+                           sera enterine si sachiez
+                           que esaiz qui si est
+                           desioins se reioindra ⁊tendront ensamble les
+                           .II. parties si sachiez a
+                           lors serez delivre du
+                           greignour duel qui on
+                           ques vous aueuist ⁊ le
+                           roiz en la greignour ioie
+                           que vous onques eussiez
+                           mais ce navendra de
+                           vant que li miendres
+                           chlřs qui soit hors dela
+                           maison le roy artu soit
+                           devenus de sa <span class="illegible">{maisniee}</span>et se ie disoie quil fust
+                           le meilleur dedenz ⁊ de
+                           hors sine mentiroie ie
+                           mie tant en ai or reti
+                           re car par <span class="faded"> illisible </span>fait darmes en peude
+                           temps plus ꝗ nuls.
+                           <span class="initiale" style="color: #0f138e">D</span>e ces nouveles
+                           fu mlt liee la roy
+                           ne et retint la damoise
+                           le a mltgñt feste ⁊ biēpensa en son <span class="illegible">{cuer ci}</span>li
+                           chlřs proit estre. lors ꝑla li chlř bleciez et demāda congie a la <span class="css_perso">royne</span> et
+                           dist quil avoit encore
+                           mlt a errer et ele li dit <span class="illegible">{quil}</span>remaigne tant quil
+                           fust gracis de son bras
+                           car de chevauchier na
+                           voit il ore nul mestier.
+                           et cil dit que a faire li
+                           </div></em></li>
                </ul>
                <li><b>La transcription normalisée</b></li>
                <ul>
