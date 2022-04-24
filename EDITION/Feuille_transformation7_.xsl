@@ -133,6 +133,7 @@
                                 bien encore en ce qui concerne l'encodage de la forme normalisée qui
                                 n'avait pas pris en compte la normalisation des espaces, majuscules,
                                 voyelles (u,i) et autres spécificités).</p>
+                            <p> Ce travail est un donc un travail à reprendre depuis sa structure XML.</p>
                         </div>
                         <div class="colonne" n="2">
                             <h2>Sommaire</h2>
@@ -149,19 +150,22 @@
                                 <ul>
                                     <li>
                                         <a href="{$pathAllo}">
-                                            <xsl:text>premier feuillet (103v): </xsl:text>
+                                            <xsl:value-of select="concat('premier feuillet (', $feuillet1,'): ')"/>
                                         </a>
-                                        <em>- <xsl:value-of
+                                        <!--<em>- <xsl:value-of
                                                 select="replace(.//ab[@n = '1']/cb[@n = '1'], 'chlřchevalierqui cil estoit qui li māan', 'chlř qui cil estoit qui li mā-... ')"
-                                            /></em>
+                                            /></em> j'imagine qu'il y avait une méthode plus simple de faire, en faisant appel au mode "orig"
+                                                mais je n'y suis pas parvenu -->
+                                        <xsl:variable name="extrait_orig">
+                                            <xsl:apply-templates select=".//ab[@n = '1']/cb[@n = '1']" mode="orig"/>
+                                        </xsl:variable>
+                                        <em><xsl:apply-templates select="substring-before($extrait_orig, 'mā')"/></em>
                                     </li>
                                     <li>
                                         <a href="{$pathAllo2}">
                                             <xsl:text>deuxième feuillet (104r): </xsl:text>
                                         </a>
-                                        <em>- <xsl:value-of
-                                                select="substring-before(replace(.//ab[@n = '2']/cb[@n = '1'], 'chlřchevalier', 'chlř'), 'la')"
-                                            />...</em>
+                                        <em><xsl:apply-templates select=".//ab[@n = '2']/cb[@n = '1']" mode="orig"/></em>
                                     </li>
                                     <!-- pas réussi à intégrer les "..."-->
                                 </ul>

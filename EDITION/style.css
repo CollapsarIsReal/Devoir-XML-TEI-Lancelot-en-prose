@@ -1,9 +1,9 @@
 /* style.css */
 body {
-  background-color: #e3f6f5;
+    background-color: #e3f6f5;
     border: thick double #38598b;
-    padding : 10px;
-    margin : 10px;
+    padding: 10px;
+    margin: 10px;
 }
 
 h1 {
@@ -24,7 +24,7 @@ h2 {
 
 h3 {
     background-color: #96ceb4;
-    
+
 }
 
 span.css_perso {
@@ -43,7 +43,7 @@ span.faded {
     border-top: dotted 1px;
 }
 li {
-  margin: 10px;
+    margin: 10px;
 }
 
 div.row {
