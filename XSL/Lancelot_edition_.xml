@@ -3,7 +3,8 @@
 <?xml-model href="out/Lancelot_ODD.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <!DOCTYPE TEI SYSTEM "Lancelot_DTD.dtd">
 
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:s="http://purl.oclc.org/dsdl/schematron" xml:lang="fr">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0"
+    xmlns:s="http://purl.oclc.org/dsdl/schematron" xml:lang="fr">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -31,7 +32,6 @@
                     <addrLine>FRANCE</addrLine>
                 </address>
                 <availability status="free">
-                      <!-- On aurait pu référencer une licence en particulier, qui aurait été un peu moins sujette à interprétation -->
                     <p>Dans un cadre de recherche ou d'enseignement</p>
                 </availability>
                 <date when-iso="2022-01">Janvier 2022</date>
@@ -61,7 +61,7 @@
                     </head>
 
                     <msContents>
-                        <summary>L'œuvre se compose d'une seule partie de 291 feuillets.</summary> <!--Il y a des découpages internes qu'on aurait pu détailler-->
+                        <summary>L'oeuvre se compose d'une seule partie de 291 feuillets.</summary>
                         <textLang mainLang="fr" otherLangs="oil">Français, oil</textLang>
                         <msItem>
                             <author>Anonyme</author>
@@ -76,10 +76,10 @@
                                 devisé, qu'il erra IIII. jours sans avanture trouver, qui à conter
                                 face ; au quint jour en droit prime chevauchoit vers une forest, si
                                 avoit osté son hiau[me pour le chault qui jà estoit encommancé...].» </explicit>
-                            <filiation>Lancelot du Lac</filiation> <!-- on aurait pu être un peu plus spécifique, avec un attribut @type et citer des mss précis -->
-                            <note>Auteurs potentiels : <!-- à imbriquer dans le filiation si c'est sur cela que porte la note-->
-                                  <persName>Chrétien de Troyes <date>113.-1185?</date></persName>
-                                  <persName>Walter Map <date>1140?-1209?</date></persName>
+                            <filiation>Lancelot du Lac</filiation>
+                            <note>Auteurs potentiels: <persName>Chrétien de Troyes
+                                        <date>113.-1185?</date></persName>
+                                <persName>Walter Map <date>1140?-1209?</date></persName>
                             </note>
                             <textLang mainLang="fr"/>
                             <respStmt>
@@ -128,36 +128,33 @@
                                 <list>
                                     <item>
                                         <locus scheme="plat superieur">St Germ 117</locus>
-                                        Probablement l'abréviation de Saint Germain 117.
-                                    </item>
+                                        Probablement l'abbreviation de Saint Germain 117. </item>
                                     <item>
-                                        <locus from="1r" to="292v"/>
-                                          Décompte des feuillets à chaque page de droite recto.
-                                    </item>
+                                        <locus from="1r" to="292v"/> Décompte des feuillets à chaque
+                                        page de droite recto. </item>
                                 </list>
-                            </handNote> <!-- Bien -->
+                            </handNote>
                         </handDesc>
                         <decoDesc>
-                            <!-- On aurait pu associer les descriptions à des zones de facsimilé et à la transcription, les identifiants ne sont pas vraiment utilisés-->
-                            <decoNote type="initial">Certaines majuscules, <!--sûrement pour marquer le
-                                début d'une partie,--> sont enluminées. Elles sont alors allongées et
+                            <decoNote type="initial">Certaines majuscules, sûrement pour marquer le
+                                début d'une partie, sont enluminées. Elles sont alors allongées et
                                 rehaussées de bleu et rouge ainsi qu’ornées de motifs rappelant des
                                 rinceaux. Les lettrines prennent sont tracées sur deux
                                 lignes.</decoNote>
-                            <decoNote type="initial" xml:id="L1"> Lettre L : lettrine bleue de 2
+                            <decoNote type="initial" xml:id="L1"> Lettre L : lettrine bleu de 2
                                 lignes de hauteur sur un fond de cadre vert. Du côté gauche de la
                                 lettrine partent deux branches du même bleu que la lettre, avec des
                                 feuilles pointues rouges, vertes et bleues.</decoNote>
-                            <decoNote type="initial" xml:id="C2"> Lettre C : lettrine bleue de 2
+                            <decoNote type="initial" xml:id="C2"> Lettre C : lettrine bleu de 2
                                 lignes de hauteur sur un fond de cadre vert. Sur son côté gauche
                                 partent deux minces branches avec chacune trois feuilles pointues
                                 vertes. Le C se referme sur lui même et termine par deux feuilles
                                 pointues rouges.</decoNote>
-                            <decoNote type="initial" xml:id="D3"> Lettre D : lettrine bleue de 2
-                                lignes de hauteur sur un fond de cadre vert. À la manière de <ref
+                            <decoNote type="initial" xml:id="D3"> Lettre D : lettrine bleu de 2
+                                lignes de hauteur sur un fond de cadre vert. A la manière de <ref
                                     target="#L1">la lettre L</ref>, de son côté gauche partent deux
                                 branches bleues avec chacune trois feuilles pointues vertes, rouges
-                                et bleues. À la manière de <ref target="#C2">la lettre C</ref>, la
+                                et bleues. A la manière de <ref target="#C2">la lettre C</ref>, la
                                 lettre se referme sur elle-même et termine avec deux feuilles en son
                                 centre.</decoNote>
                         </decoDesc>
@@ -184,6 +181,7 @@
                         </sealDesc>
                     </physDesc>
 
+
                     <history>
                         <origin>France</origin>
                         <provenance>
@@ -203,7 +201,7 @@
                         <provenance>
                             <listBibl>
                                 <head> Bibliographie des ouvrages mentionnant le <bibl
-                                        corresp="#ms16999">manuscrit 16999</bibl> : </head>
+                                        corresp="#ms16999">manuscrit 16999</bibl></head>
                                 <bibl xml:id="Aniel-2008">
                                     <author>Notice par <persName>Jean Pierre
                                         ANIEL</persName></author>
@@ -234,7 +232,6 @@
                                             SALAMON (dir.)</persName></author>
                                     <title type="m">Le texte médiéval : de la variante à la
                                         recréation</title>
-                                      <!-- inutile de renseigner des balises vides -->
                                     <pubPlace/>
                                     <publisher/>
                                     <date>2012</date>
@@ -254,7 +251,7 @@
                                     <biblScope unit="page">p. 129</biblScope>
                                 </bibl>
                                 <bibl xml:id="Dumitrescu-2014">
-                                    <note> Bibliographie relatif à un dépouillement bibliographique :</note>
+                                    <note> Bibliographie relatif à un dépouillement bibliographique: </note>
                                     <author>L.-I. DUMITRESCU</author>
                                     <title>« Le rôle de l'homologie dans quelques armoiries
                                         littéraires », dans Marqueurs d'identité dans la littérature
@@ -262,8 +259,7 @@
                                         (XIIe-XVe siècles) : actes du colloque tenu à Poitiers les
                                         17 et 18 novembre 2011, textes réunis par <persName>Catalina
                                             Girbea</persName>, <persName>Laurent Hablot</persName>
-                                        et <persName>Raluca Radulescu</persName>
-                                    </title>
+                                        et <persName>Raluca Radulescu</persName></title>
                                     <pubPlace>Turnhout</pubPlace>
                                     <publisher>Brepols</publisher>
                                     <date>2014</date>
@@ -298,8 +294,13 @@
                         <persName>Arthur</persName>
                         <note>Roi de Bretagne</note>
                     </person>
+                    <person xml:id="Segurades">
+                        <persName>Segurades</persName>
+                        <note>Chevalier adversaire de Lancelot</note>
+                    </person>
                     <person xml:id="Hector">
                         <persName>Hector des Marès</persName>
+                        <note>fils du roi Ban de Bénoïc et de la fille d' Agravadain. Demi-frère de Lancelot</note>
                     </person>
                 </listPerson>
             </particDesc>
@@ -563,124 +564,128 @@
         <body>
             <head>Lancelot en prose, Chapitres 056/057 : Quête de Gauvain et situation d’Hector</head>
             <milestone unit="surface" xml:id="s103v"/>
-            <pb facs="https://gallica.bnf.fr/ark:/12148/btv1b6000418r/f218.item" n="103v" xml:id="f103v"/>
-            <ab>
-                <cb n="1"/>
+            <pb facs="https://gallica.bnf.fr/ark:/12148/btv1b6000418r/f218.item" n="103v"
+                xml:id="f103v"/>
+            
+            <ab n="1">
+                <cb n="1">
                     <lb facs="#l1"/><hi rend="initiale color(blue) size(2lines) sizeAct(7lines)">L</hi>ors commence la
-                    <lb facs="#l2"/><persName ref="#Guenievre">royne</persName>apenser et
-                    <lb facs="#l3"/>puis demande au &chevalier;
-                    <lb facs="#l4"/>qui cil estoit qui li m&an;
+                    <lb facs="#l2"/><persName ref="#Guenievre">royne</persName> apenser et
+                    <lb facs="#l3"/> puis demande au &chevalier;
+                    <lb facs="#l4"/> qui cil estoit qui li m&an;
+                </cb>
 
-                <cb n="2"/>
+                <cb n="2">
                      <lb facs="#l5" xml:id="n5" n="5"/>doit et il respont quil
                      <lb facs="#l6" xml:id="n6" n="6" type="rejet" corresp="#n7"/>ne scet ou mais il c&om;
                      <lb facs="#l7" xml:id="n7" n="7"/>manda que ie le vous
                      <lb facs="#l8" n="8"/>deisse et vous le connois
                      <lb facs="#l9" n="9"/>troiz bien &E;t quant la
-                     <lb facs="#l10" n="10"/><persName ref="#Guenievre">royne</persName> voit quil est ble
-                     <lb facs="#l11" n="11"/>ciez si li demanda qui
-                     <lb facs="#l12" n="12"/>le bleca ainssi &C;ertes
-                     <lb facs="#l13" n="13"/>dame fait il li &chevalier;s &que;
-                     <lb facs="#l14" n="14"/>ie vous di ma blecie li
-                     <lb facs="#l15" n="15"/>chair si durement que
-                     <lb facs="#l16" n="16" type="rejet" corresp="#n17"/>ie me blecea ainsi c&om;
-                     <lb facs="#l17" xml:id="n17" n="17" type="rejet" corresp="#n18"/>me vous veez &L;ors &par;
-                     <lb facs="#l18" xml:id="n18" n="18"/>la la pucele qui lescu
-                     <lb facs="#l19" n="19"/>avoit aporte &et; dist a
-                     <lb facs="#l20" n="20"/>la<persName ref="#Guenievre">royne</persName> dame fait ele
-                     <lb facs="#l21" n="21"/>salus vous mande la
-                     <lb facs="#l22" n="22"/>plus sage pucele qui
-                     <lb facs="#l23" n="23"/>orendroit vive et la
-                     <lb facs="#l24" n="24"/>plus bele que ie sache
-                     <lb facs="#l25" n="25"/>a mon enscient. et si
-                     <lb facs="#l26" n="26"/>vous mande que vous
-                     <lb facs="#l27" n="27"/>gardez cest escu pour
-                     <lb facs="#l28" n="28"/>lamour delui et dau
-                     <lb facs="#l29" type="rejet" n="29"/>trui que vous plus a
-                     <lb facs="#l30" n="30" type="rejet" corresp="#n31"/>mez et si vous man
-                     <lb facs="#l31" xml:id="n31" n="31"/>de quele est cele monde
-                     <lb facs="#l32" n="32"/>qui plus scet de uos <unclear reason="illegible">&com;<expan>com</expan><!-- Pourquoi avoir ajouté <expan> si c'est déjà dans l'entité ?--></unclear>
-                     <lb facs="#l33" n="33" type="rejet" corresp="#n34"/>sans et qui plus si a
-                     <lb facs="#l34" xml:id="n34" n="34"/>corde &C;ar ele aime ce
-                     <lb facs="#l35" n="35"/>que vous amez et &bien;
-                     <lb facs="#l36" n="36"/>sachiez que se vous
-                     <lb facs="#l37" n="37"/>cest eleu gardez elle
-                     <lb facs="#l38" n="38"/>vous getera de la pl&us;
-                     <lb facs="#l39" n="39"/>grant dolour ou <unclear reason="illegible">ro&us;</unclear>
-                     <lb facs="#l40" n="40" type="rejet" corresp="#n41"/>fassiez onques et me
-                     <lb facs="#l41" xml:id="n41" n="41"/>tra en la greignour
-                     <lb facs="#l42" n="42"/>ioie ou vous fussiez li
-                     <lb facs="#l43" n="43" type="rejet" corresp="#n44"/><unclear reason="illegible">meust</unclear> diex fait la roy
-                     <lb facs="#l44" xml:id="n44" n="44"/>ne li esccuz fait &bien; <unclear reason="illegible">agi</unclear>
-                     <lb facs="#l45" n="45"/><unclear>der</unclear> et bonne aventure
-                     <lb facs="#l46" n="46" type="rejet" corresp="#n47"/>eut la pucele qui le m&en;
-                     <lb facs="#l47" xml:id="n47" n="47"/>voioa &et; vous qui la por
-                     <lb facs="#l48" n="48" type="rejet" corresp="#n49"/>tastes soiez la bien ve
-                     <lb facs="#l49" xml:id="n49" n="49"/>nue pour dieu qui est
-                     <lb facs="#l50" n="50"/>la pucele dites le nous
-                     <lb facs="#l51" n="51" type="rejet" corresp="#n52"/>&D;ame fait ele ie la n&om;
-                     <lb facs="#l52" xml:id="n52"/>merai seie onques puis
-                     <lb facs="#l53" n="53"/>&E;le est apelee la pucele
+                     <lb facs="#l10" n="10"/><persName ref="#Guenievre">royne</persName> voit quil est ble            
+                     <lb facs="#l11" n="11"/>ciez si li demanda qui            
+                     <lb facs="#l12" n="12"/>le bleca ainssi &C;ertes            
+                     <lb facs="#l13" n="13"/>dame fait il li &chevalier;s &que;            
+                     <lb facs="#l14" n="14"/>ie vous di ma blecie li            
+                     <lb facs="#l15" n="15"/>chair si durement que            
+                     <lb facs="#l16" n="16" type="rejet" corresp="#n17"/>ie me blecea ainsi c&om;            
+                     <lb facs="#l17" xml:id="n17" n="17" type="rejet" corresp="#n18"/>me vous veez &L;ors &par;            
+                     <lb facs="#l18" xml:id="n18" n="18"/>la la pucele qui lescu            
+                     <lb facs="#l19" n="19"/>avoit aporte &et; dist a            
+                     <lb facs="#l20" n="20"/>la<persName ref="#Guenievre">royne</persName> dame fait ele            
+                     <lb facs="#l21" n="21"/>salus vous mande la            
+                     <lb facs="#l22" n="22"/>plus sage pucele qui            
+                     <lb facs="#l23" n="23"/>orendroit vive et la            
+                     <lb facs="#l24" n="24"/>plus bele que ie sache            
+                     <lb facs="#l25" n="25"/>a mon enscient. et si            
+                     <lb facs="#l26" n="26"/>vous mande que vous            
+                     <lb facs="#l27" n="27"/>gardez cest escu pour            
+                     <lb facs="#l28" n="28"/>lamour delui et dau            
+                     <lb facs="#l29" type="rejet" n="29"/>trui que vous plus a            
+                     <lb facs="#l30" n="30" type="rejet" corresp="#n31"/>mez et si vous man            
+                     <lb facs="#l31" xml:id="n31" n="31"/>de quele est cele monde            
+                     <lb facs="#l32" n="32"/>qui plus scet de uos <unclear reason="illegible">&com;</unclear>            
+                     <lb facs="#l33" n="33" type="rejet" corresp="#n34"/>sans et qui plus si a            
+                     <lb facs="#l34" xml:id="n34" n="34"/>corde &C;ar ele aime ce            
+                     <lb facs="#l35" n="35"/>que vous amez et &bien;            
+                     <lb facs="#l36" n="36"/>sachiez que se vous            
+                     <lb facs="#l37" n="37"/>cest eleu gardez elle            
+                     <lb facs="#l38" n="38"/>vous getera de la pl&us;            
+                     <lb facs="#l39" n="39"/>grant dolour ou <unclear reason="illegible">ro&us;</unclear>            
+                     <lb facs="#l40" n="40" type="rejet" corresp="#n41"/>fassiez onques et me            
+                     <lb facs="#l41" xml:id="n41" n="41"/>tra en la greignour            
+                     <lb facs="#l42" n="42"/>ioie ou vous fussiez li            
+                     <lb facs="#l43" n="43" type="rejet" corresp="#n44"/><unclear reason="illegible">meust</unclear> diex fait la roy            
+                     <lb facs="#l44" xml:id="n44" n="44"/>ne li esccuz fait &bien; <unclear reason="illegible">agi</unclear>            
+                     <lb facs="#l45" n="45"/><unclear>der</unclear> et bonne aventure            
+                     <lb facs="#l46" n="46" type="rejet" corresp="#n47"/>eut la pucele qui le m&en;            
+                     <lb facs="#l47" xml:id="n47" n="47"/>voioa &et; vous qui la por            
+                     <lb facs="#l48" n="48" type="rejet" corresp="#n49"/>tastes soiez la bien ve            
+                     <lb facs="#l49" xml:id="n49" n="49"/>nue pour dieu qui est            
+                     <lb facs="#l50" n="50"/>la pucele dites le nous            
+                     <lb facs="#l51" n="51" type="rejet" corresp="#n52"/>&D;ame fait ele ie la n&om;            
+                     <lb facs="#l52" xml:id="n52"/>merai seie onques puis            
+                     <lb facs="#l53" n="53"/>&E;le est apelee la pucele            
                      <lb facs="#l54" n="54" type="rejet" corresp="#n55"/>del lac &E;t quant la roy
-
-                <cb n="3"/>
-                     <lb facs="#l55" xml:id="n55" n="55"/>ne lentent si scet bien
-                     <lb facs="#l56" n="56"/>maintenant qui ele
-                     <lb facs="#l57" n="57"/>est. lors saisi la pucele
-                     <lb facs="#l58" n="58"/>qui lescu avoit aporte
-                     <lb facs="#l59" n="59" type="rejet" corresp="#n60"/>si li fait si grant ioie &com;
-                     <lb facs="#l60" xml:id="n60" n="60"/>me ele plus puet &et; li
-                     <lb facs="#l61" n="61"/>oste ele meismes lescu
-                     <lb facs="#l62" n="62"/>du col si le regarde am&on;t
-                     <lb facs="#l63" n="63"/>&et; aval &et; voit quil est
-                     <lb facs="#l64" n="64"/>tous fendus des lepie
-                     <lb facs="#l65" n="65"/>iusquen la penne am&on;t.
-                     <lb facs="#l66" n="66" type="rejet" corresp="#n67"/>&N;e netiennent les II &par;
-                     <lb facs="#l67" xml:id="n67" n="67"/>ties arien fors aux bras
-                     <lb facs="#l68" n="68"/>de la boucle de lescu qui
-                     <lb facs="#l69" n="69"/>&moult; ert riche &et; bele &et; to&us;
-                     <lb facs="#l70" n="70"/>les II moities si loing
-                     <lb facs="#l71" n="71"/>lun de lautre que len
-                     <lb facs="#l72" n="72"/>puet entredeuz <unclear reason="illegible">fichier</unclear>
-                     <lb facs="#l73" n="73"/>sa main sans atouchier
-                     <lb facs="#l74" n="74"/>aus .II. moities fu lune
-                     <lb facs="#l75" n="75"/>pres de lautre des &par;ties
-                     <lb facs="#l76" n="76"/>de lescu avoit pourtir
-                     <lb facs="#l77" n="77" type="rejet" corresp="#n78"/>.I. &chevalier; si richement ar
-                     <lb facs="#l78" xml:id="n78" n="78"/>me fors le chief concil
-                     <lb facs="#l79" n="79"/>le sot mier faire quile
-                     <lb facs="#l80" n="80" type="rejet" corresp="#n81"/>fist. &E;t en lautre moi
-                     <lb facs="#l81" xml:id="n81" n="81"/>tie estoit pourtraite une
-                     <lb facs="#l82" n="82"/>damoisele aussi bele c&omme;
-                     <lb facs="#l83" n="83" type="rejet" corresp="#n84"/>len puet onques plus be
-                     <lb facs="#l84" xml:id="n84" n="84"/>le paindre si estoit par
-                     <lb facs="#l85" n="85"/>en haut sipres a&pre;s a&pre;s
-                     <lb facs="#l86" n="86" type="rejet" corresp="#n87"/>lun de lautre &que; li uns te
-                     <lb facs="#l87" xml:id="n87" n="87"/>noit alautre son bras sor
-                     <lb facs="#l88" n="88"/>le col et sentrebarlent se
-                     <lb facs="#l89" n="89" type="rejet" corresp="#n90"/>ne fust la fendure de les
-                     <lb facs="#l90" xml:id="n90" n="90"/>cu et par dessouz estoi&en;t
-                     <lb facs="#l91" n="91"/>si loing aloing que pl&us;
-                     <lb facs="#l92" n="92"/>proient.
-                     <lb facs="#l93" n="93"/><hi rend="initiale color(blue) size(2lines) sizeAct(5lines)">C</hi>&omme; la <persName ref="#Guenievre">royne</persName> dist ala
-                     <lb facs="#l94" n="94" type="rejet" corresp="#n95"/>pucele &C;ertes da
-                     <lb facs="#l95" xml:id="n95" n="95"/>moisele cist escu est &moult;
-                     <lb facs="#l96" n="96"/>gentis sil ne fust fend&us;
-                     <lb facs="#l97" n="97"/>et dites moi par la <unclear reason="illegible">riens</unclear>
+                </cb>
+                <cb n="3">
+                     <lb facs="#l55" xml:id="n55" n="55"/>ne lentent si scet bien            
+                     <lb facs="#l56" n="56"/>maintenant qui ele            
+                     <lb facs="#l57" n="57"/>est. lors saisi la pucele            
+                     <lb facs="#l58" n="58"/>qui lescu avoit aporte            
+                     <lb facs="#l59" n="59" type="rejet" corresp="#n60"/>si li fait si grant ioie &com;            
+                     <lb facs="#l60" xml:id="n60" n="60"/>me ele plus puet &et; li            
+                     <lb facs="#l61" n="61"/>oste ele meismes lescu            
+                     <lb facs="#l62" n="62"/>du col si le regarde am&on;t            
+                     <lb facs="#l63" n="63"/>&et; aval &et; voit quil est            
+                     <lb facs="#l64" n="64"/>tous fendus des lepie            
+                     <lb facs="#l65" n="65"/>iusquen la penne am&on;t.            
+                     <lb facs="#l66" n="66" type="rejet" corresp="#n67"/>&N;e netiennent les II &par;            
+                     <lb facs="#l67" xml:id="n67" n="67"/>ties arien fors aux bras            
+                     <lb facs="#l68" n="68"/>de la boucle de lescu qui            
+                     <lb facs="#l69" n="69"/>&moult; ert riche &et; bele &et; to&us;            
+                     <lb facs="#l70" n="70"/>les II moities si loing            
+                     <lb facs="#l71" n="71"/>lun de lautre que len            
+                     <lb facs="#l72" n="72"/>puet entredeuz <unclear reason="illegible">fichier</unclear>            
+                     <lb facs="#l73" n="73"/>sa main sans atouchier            
+                     <lb facs="#l74" n="74"/>aus .II. moities fu lune            
+                     <lb facs="#l75" n="75"/>pres de lautre des &par;ties            
+                     <lb facs="#l76" n="76"/>de lescu avoit pourtir            
+                     <lb facs="#l77" n="77" type="rejet" corresp="#n78"/>.I. &chevalier; si richement ar            
+                     <lb facs="#l78" xml:id="n78" n="78"/>me fors le chief concil            
+                     <lb facs="#l79" n="79"/>le sot mier faire quile            
+                     <lb facs="#l80" n="80" type="rejet" corresp="#n81"/>fist. &E;t en lautre moi            
+                     <lb facs="#l81" xml:id="n81" n="81"/>tie estoit pourtraite une            
+                     <lb facs="#l82" n="82"/>damoisele aussi bele c&omme;            
+                     <lb facs="#l83" n="83" type="rejet" corresp="#n84"/>len puet onques plus be            
+                     <lb facs="#l84" xml:id="n84" n="84"/>le paindre si estoit par            
+                     <lb facs="#l85" n="85"/>en haut sipres a&pre;s a&pre;s            
+                     <lb facs="#l86" n="86" type="rejet" corresp="#n87"/>lun de lautre &que; li uns te            
+                     <lb facs="#l87" xml:id="n87" n="87"/>noit alautre son bras sor            
+                     <lb facs="#l88" n="88"/>le col et sentrebarlent se            
+                     <lb facs="#l89" n="89" type="rejet" corresp="#n90"/>ne fust la fendure de les            
+                     <lb facs="#l90" xml:id="n90" n="90"/>cu et par dessouz estoi&en;t            
+                     <lb facs="#l91" n="91"/>si loing aloing que pl&us;            
+                     <lb facs="#l92" n="92"/>proient.            
+                     <lb facs="#l93" n="93"/><hi rend="initiale color(blue) size(2lines) sizeAct(5lines)">C</hi>&omme; la <persName ref="#Guenievre">royne</persName> dist ala            
+                     <lb facs="#l94" n="94" type="rejet" corresp="#n95"/>pucele &C;ertes da            
+                     <lb facs="#l95" xml:id="n95" n="95"/>moisele cist escu est &moult;            
+                     <lb facs="#l96" n="96"/>gentis sil ne fust fend&us;            
+                     <lb facs="#l97" n="97"/>et dites moi par la <unclear reason="illegible">riens</unclear>            
                      <lb facs="#l98" n="98"/>que vous plus ames &que;           
-                     <lb facs="#l99" n="99"/>ce senefie &C;ar il pert estre
-                     <lb facs="#l100" n="100"/>touz froiz et du &chevalier; &et;
-                     <lb facs="#l101" n="101"/>de la damoisele qui pour
-                     <lb facs="#l102" n="102"/>trait y sont menredites
-                     <lb facs="#l103" n="103"/>la verite sanz mentir et
-                     <lb facs="#l104" n="104"/>la pucele li dist. &D;ame
-        </ab>
+                     <lb facs="#l99" n="99"/>ce senefie &C;ar il pert estre            
+                     <lb facs="#l100" n="100"/>touz froiz et du &chevalier; &et;            
+                     <lb facs="#l101" n="101"/>de la damoisele qui pour            
+                     <lb facs="#l102" n="102"/>trait y sont menredites            
+                     <lb facs="#l103" n="103"/>la verite sanz mentir et            
+                     <lb facs="#l104" n="104"/>la pucele li dist. &D;ame            
+                </cb>
+            </ab>
 
             <milestone unit="surface" xml:id="s104r"/>
             <pb facs="https://gallica.bnf.fr/ark:/12148/btv1b6000418r/f219.item" n="104r"
                 xml:id="f104r"/>
-        <ab>
-            <cb n="1"/>
+        <ab n="2">
+            <cb n="1">
             <lb facs="#l105" n="105"/>il est un &chevalier; lemeilleur
             <lb facs="#l106" n="106"/>qui orendroit soit si pria
             <lb facs="#l107" n="107"/>une dame damours la
@@ -731,8 +736,9 @@
             <lb facs="#l152" n="152" type="rejet" corresp="#n153"/>car de chevauchier na
             <lb facs="#l153" xml:id="n153" n="153"/>voit il ore nul mestier.
             <lb facs="#l154" n="154"/>&E;t cil dit que a faire li
-
-            <cb n="2"/>
+            </cb>
+            
+            <cb n="2">
             <lb facs="#l155" n="155"/>convenoit &C;ar li &chevalier;s
             <lb facs="#l156" n="156"/>qui conquis lavoit
             <lb facs="#l157" n="157"/>li fist fiancier que si
@@ -742,7 +748,7 @@
             <lb facs="#l161" n="161"/><unclear reason="illegible">tot</unclear> &et; ie ne sai dame ou
             <lb facs="#l162" n="162"/>ce est conques ni fuy
             <lb facs="#l163" n="163"/>&Q;uant la dame de ro
-            <lb facs="#l164" n="164"/>&H;ector lentent si sant
+                <lb facs="#l164" n="164"/><persName ref="#Hector">&H;ector</persName> lentent si sant
             <lb facs="#l165" n="165"/>avant &et; demande du
             <lb facs="#l166" n="166" type="rejet" corresp="#n167"/>&chevalier; nouveles &et; dist &an;
             <lb facs="#l167" xml:id="n167" n="167" type="rejet" corresp="#n168"/>ce est ele acui il len
@@ -770,7 +776,7 @@
             <lb facs="#ll89" n="189"/>ne vous len blasmast
             <lb facs="#l190" n="190"/>&C;ar vous lauez deservi
             <lb facs="#ll91" n="191"/>et &vostre; seneschal verroie
-            <lb facs="#l192" n="192"/>ie volentiers et &H;ector.
+                <lb facs="#l192" n="192"/>ie volentiers et <persName ref="#Hector">&H;ector</persName>.
             <lb facs="#l193" n="193"/>&E;t cil saillent avant
             <lb facs="#l194" n="194"/>et demandent nouveles
             <lb facs="#l195" n="195"/>du &chevalier; et el lor endist
@@ -783,8 +789,9 @@
             <lb facs="#l202" n="202" type="rejet" corresp="#n203"/>seignour &et; ami &et; men
             <lb facs="#l203" xml:id="n203" n="203"/>voie en &vostre; prison. &C;ar
             <lb facs="#l204" n="204"/>il seet &bien; que vous ne
-
-            <cb n="3"/>
+            </cb>    
+            
+            <cb n="3">
             <lb facs="#l205" n="205"/>me voudriez ne mal ne
             <lb facs="#l206" n="206"/>vilonnie. &E;t li senescha&us;
             <lb facs="#l207" n="207"/>le recut a&moult; &grant; ioie &et;
@@ -811,7 +818,9 @@
             <lb facs="#l228" n="228"/>deisse que a preudomme
             <lb facs="#l229" n="229" type="rejet" corresp="#n230"/>et apreu &chevalier; doit len en
             <lb facs="#l230" xml:id="n230" n="230"/>voier present.
+            </cb>
         </ab>
+                
         </body>
     </text>
 </TEI>
