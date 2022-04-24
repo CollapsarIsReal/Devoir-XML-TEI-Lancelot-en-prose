@@ -627,10 +627,7 @@
 
     </xsl:template>
 
-    <!-- TEXTE TRANSCRIT -->
-    <!-- - - - -VERSION ALLOGRAPHETIQUE - - - - -->
-
-
+    <!-- LES DIFFERENTES TRANSCRIPTIONS -->
     <!-- affichage de l'édition version normalisée -->
     <xsl:template match="choice" mode="reg">
         
@@ -639,7 +636,7 @@
             .//expan//text() | .//ex/text()"/>
     </xsl:template>
     
-
+    <!-- affichage de l'édition version allographétique -->
     <xsl:template match="choice" mode="orig">
 
         <xsl:value-of select="
@@ -647,8 +644,9 @@
                 .//abbr/text() | .//sic/text()"/>
 
     </xsl:template>
-    <!-- - - - -VERSION MODERNISÉE - - - - -->
-    <!-- lettrines en couleur : il faudrait l'améliorer en passant la couleur dans une variable pour
+    
+    <!-- gestion des lettrines en couleurs -->
+    <!-- A REPRENDRE : il faudrait l'améliorer en passant la couleur dans une variable pour
         prévoir d'autres couleurs que le bleu -->
     <xsl:template match="//hi" mode="#all">
         <xsl:choose>
@@ -663,10 +661,17 @@
         </xsl:choose>
     </xsl:template>
 
-    <!-- gestion des <persName> -->
-    <xsl:template match="TEI//body//persName" mode="#all">
+    <!-- gestion des <persName> pour ajouter une css_perso -->
+    <!-- A REPRENDRE : se répète entre la version orig et reg, aurait pu être amélioré -->
+    <xsl:template match="TEI//body//persName" mode="reg">
         <span class="css_perso">
             <xsl:apply-templates mode="reg"/>
+        </span>
+    </xsl:template>
+    
+    <xsl:template match="TEI//body//persName" mode="orig">
+        <span class="css_perso">
+            <xsl:apply-templates mode="orig"/>
         </span>
     </xsl:template>
 
@@ -681,6 +686,8 @@
                     <xsl:text>}</xsl:text>
                 </span>
             </xsl:when>
+            <!-- gestion des mots illisibles à cause du support abbimé, création d'une classe
+            pour pouvoir les gérer avec de la css-->
             <xsl:when test="@reason = 'faded'">
                 <span>
                     <xsl:attribute name="class"><xsl:text>faded</xsl:text>
@@ -691,7 +698,8 @@
     </xsl:template>
 
 
-    <!-- création d'attribut class="colonne" pour gérer l'affichage css par la suite -->
+    <!-- création d'attribut class="colonne" au texte pour gérer l'affichage css par la suite -->
+    <!-- A REFPRENDRE : comme dit plus bas, gérer les occurence en les groupant par feuillets pour plus de clarté -->
     <xsl:template match="text/body//cb" mode="#all">
         <xsl:element name="div">
             <xsl:attribute name="class">
@@ -704,7 +712,7 @@
         </xsl:element>
     </xsl:template>
 
-    <!-- L'index des personnages -->
+    <!-- gestion de l'index des personnages -->
     <xsl:template name="indexPers">
         <xsl:for-each select="//listPerson/person/persName">
             <li>
