@@ -60,15 +60,24 @@
         <xsl:variable name="auteur_edition">
             <xsl:value-of select="concat(./respStmt/persName/forename, ' ', ./respStmt/persName/surname)"/>
         </xsl:variable>
-        <!--<xsl:variable name="ENC"> NOTE : apparemment il n'est pas possible de créer un lien dans une variable XSL ?
-            <a>
-                <xsl:attribute name="href">
-                    <xsl:text>https://www.chartes.psl.eu/fr/rubrique-admissions/master-technologies-numeriques-appliquees-histoire</xsl:text>
-                </xsl:attribute>
-                    <xsl:value-of select="replace(//publicationStmt/publisher, 'Edition par l', '')"/>
-            </a>
-        </xsl:variable>-->
+        <xsl:variable name="feuillet1"> <!-- il faudrait trouver une formule pour créer une variable en fonction du
+            @xml:id des <pb> pour éviter les doublons feuillet1, feuillet2 etc-->
+            <xsl:value-of select="replace(//pb[1]/[@xml:id], 'f', '')"/>
+        </xsl:variable>
+        <xsl:variable name="feuillet2">
+            <xsl:value-of select="replace(//pb[2]/[@xml:id], 'f', '')"/>
+        </xsl:variable>
+        <xsl:variable name="titre_norm">
+            "/>
+        </xsl:variable>
+        <xsl:variable name="titre_norm2">
+            <xsl:value-of select="concat('Transcription normalisée du feuillet ', $feuillet2, ':')"/>
+        </xsl:variable>
+        <xsl:variable name="transcription">
+            <xsl:value-of select="concat('Transcription du feuillet ', $feuillet1, ':')"/>
+        </xsl:variable>
 
+        <!-- DEBUT DES PAGES HTML -->
         <!-- PAGE D'ACCUEIL -->
        
         <xsl:result-document href="{$pathAccueil}" method="html" indent="yes">
@@ -210,7 +219,7 @@
                    
                     
                     
-                    <h3>La transcription normalisée</h3>
+                    <h3><xsl:value-of select="concat('Transcription normalisée du feuillet ', $feuillet1, ':')</h3>
                     
                     <div class="row">
                         <xsl:apply-templates select="//ab[@n='1']" mode="reg"/>
@@ -259,7 +268,7 @@
                    
                     
                     
-                    <h3>La transcription normalisée</h3>
+                    <h3><xsl:value-of select="concat('Transcription normalisée du feuillet ', $feuillet2, ':')</h3>
                     
                     <div class="row">
                         <xsl:apply-templates select=".//ab[@n='2']" mode="reg"/>
@@ -390,7 +399,7 @@
             </html>
         </xsl:result-document>
         </xsl:template>
-    <!--Fin des pages HTML -->
+    <!--FIN DES PAGES HTML-->
 
     <!-- page de notice du manuscrit -->
     <xsl:template name="notice_manuscrit">
