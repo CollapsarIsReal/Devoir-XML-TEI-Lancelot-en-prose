@@ -8,6 +8,6 @@ Ce repository comporte quatre dossiers:
 - un dossier EDITION qui contient le fichier XML de l'édition + le fichier DTD.
 - un dossier IMAGES qui contient les deux images relatives aux folio 103v et 104r.
 - un dossier ODD qui comporte le fichier ODD ainsi que ses deux transformations en rng et html.
-- un dossier XSL contenant la feuille de trasnformation XSL pour afficher en pages HTML le fichier lancelot.xml
+- un dossier XSL contenant la feuille de trasnformation XSL pour afficher en pages HTML le fichier lancelot_edition.xml
 
 Initialement l'édition devait comporter une partie fac-similée interactive...mais cela est remis à plus tard...
